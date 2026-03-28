@@ -118,21 +118,21 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### API Tests — Guest List
 
-- [ ] **TGUST-01**: Test OWNER/MANAGER can view guest list
-- [ ] **TGUST-02**: Test OWNER/MANAGER can export guest list as CSV
+- [x] **TGUST-01**: Test OWNER/MANAGER can view guest list
+- [x] **TGUST-02**: Test OWNER/MANAGER can export guest list as CSV
 
 ### API Tests — Email Settings
 
-- [ ] **TEMAL-01**: Test view email config (confirmation, reminders, notifications toggles)
-- [ ] **TEMAL-02**: Test update email config toggles
-- [ ] **TEMAL-03**: Test send bulk email to all event attendees
-- [ ] **TEMAL-04**: Test view email log
+- [x] **TEMAL-01**: Test view email config (confirmation, reminders, notifications toggles)
+- [x] **TEMAL-02**: Test update email config toggles
+- [x] **TEMAL-03**: Test send bulk email to all event attendees
+- [x] **TEMAL-04**: Test view email log
 
 ### API Tests — Event Analytics
 
-- [ ] **TANLT-01**: Test view analytics (registrations, revenue, fees, net, attendance rate)
-- [ ] **TANLT-02**: Test analytics includes registrations_by_tier breakdown
-- [ ] **TANLT-03**: Test analytics includes registrations_over_time series
+- [x] **TANLT-01**: Test view analytics (registrations, revenue, fees, net, attendance rate)
+- [x] **TANLT-02**: Test analytics includes registrations_by_tier breakdown
+- [x] **TANLT-03**: Test analytics includes registrations_over_time series
 
 ### API Tests — Public Pages
 
@@ -282,15 +282,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TPERM-03 | Phase 4 | Complete |
 | TPERM-04 | Phase 4 | Complete |
 | TPERM-05 | Phase 4 | Complete |
-| TGUST-01 | Phase 4 | Pending |
-| TGUST-02 | Phase 4 | Pending |
-| TEMAL-01 | Phase 4 | Pending |
-| TEMAL-02 | Phase 4 | Pending |
-| TEMAL-03 | Phase 4 | Pending |
-| TEMAL-04 | Phase 4 | Pending |
-| TANLT-01 | Phase 4 | Pending |
-| TANLT-02 | Phase 4 | Pending |
-| TANLT-03 | Phase 4 | Pending |
+| TGUST-01 | Phase 4 | Complete |
+| TGUST-02 | Phase 4 | Complete |
+| TEMAL-01 | Phase 4 | Complete |
+| TEMAL-02 | Phase 4 | Complete |
+| TEMAL-03 | Phase 4 | Complete |
+| TEMAL-04 | Phase 4 | Complete |
+| TANLT-01 | Phase 4 | Complete |
+| TANLT-02 | Phase 4 | Complete |
+| TANLT-03 | Phase 4 | Complete |
 | TPUBL-01 | Phase 4 | Complete |
 | TPUBL-02 | Phase 4 | Complete |
 | TPUBL-03 | Phase 4 | Complete |
