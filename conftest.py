@@ -32,6 +32,63 @@ def pytest_sessionstart(session):
         raise RuntimeError(f"Cannot connect to backend at {s.API_URL}: {e}")
 
 
+def _cleanup(client, registry):
+    """Clean up all registered test resources in reverse dependency order."""
+    print("\n[teardown] Cleaning up test resources...")
+
+    # 1. DELETE ticket tiers
+    for entry in registry.get("ticket_tier_ids", []):
+        try:
+            org_slug = entry["org_slug"]
+            event_slug = entry["event_slug"]
+            tier_id = entry["tier_id"]
+            url = f"/organizations/{org_slug}/events/{event_slug}/ticket-tiers/{tier_id}/"
+            resp = client.delete(url)
+            print(f"[teardown] DELETE ticket-tier {tier_id}: {resp.status_code}")
+        except Exception as e:
+            print(f"[teardown] WARNING: Failed to delete ticket tier {entry}: {e}")
+
+    # 2. PATCH promo codes to deactivate
+    for entry in registry.get("promo_code_ids", []):
+        try:
+            org_slug = entry["org_slug"]
+            event_slug = entry["event_slug"]
+            promo_id = entry["promo_id"]
+            url = f"/organizations/{org_slug}/events/{event_slug}/promo-codes/{promo_id}/"
+            resp = client.patch(url, json={"is_active": False})
+            print(f"[teardown] PATCH promo-code {promo_id} is_active=False: {resp.status_code}")
+        except Exception as e:
+            print(f"[teardown] WARNING: Failed to deactivate promo code {entry}: {e}")
+
+    # 3. POST cancel events
+    for entry in registry.get("event_ids", []):
+        try:
+            org_slug = entry["org_slug"]
+            event_slug = entry["event_slug"]
+            url = f"/organizations/{org_slug}/events/{event_slug}/cancel/"
+            resp = client.post(url)
+            print(f"[teardown] POST cancel event {event_slug}: {resp.status_code}")
+        except Exception as e:
+            print(f"[teardown] WARNING: Failed to cancel event {entry}: {e}")
+
+    # 4. DELETE venues
+    for entry in registry.get("venue_ids", []):
+        try:
+            org_slug = entry["org_slug"]
+            venue_id = entry["venue_id"]
+            url = f"/organizations/{org_slug}/venues/{venue_id}/"
+            resp = client.delete(url)
+            print(f"[teardown] DELETE venue {venue_id}: {resp.status_code}")
+        except Exception as e:
+            print(f"[teardown] WARNING: Failed to delete venue {entry}: {e}")
+
+    # 5. Orgs and users cannot be deleted (405) -- skip, naming prefix is isolation
+    for entry in registry.get("org_ids", []):
+        print(f"[teardown] Skipping org delete (not supported): {entry.get('slug', entry)}")
+
+    print("[teardown] Cleanup complete.")
+
+
 @pytest.fixture(scope="session")
 def teardown_registry():
     registry = {
@@ -44,7 +101,6 @@ def teardown_registry():
         "order_ids": [],
     }
     yield registry
-    # Cleanup logic wired in Phase 2 once domain endpoints are known
 
 
 @pytest.fixture(scope="session")
@@ -158,4 +214,7 @@ def auth_client(teardown_registry):
 
     instance = _Client()
     yield instance
+
+    # --- Phase 2 teardown cleanup ---
+    _cleanup(instance, teardown_registry)
     instance.close()

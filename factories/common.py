@@ -23,3 +23,13 @@ def event_title() -> str:
 def venue_name() -> str:
     """Return test-{run}-venue-{token}."""
     return f"test-{RUN_ID}-venue-{uuid.uuid4().hex[:4]}"
+
+
+def tier_name() -> str:
+    """Return test-{run}-tier-{token}."""
+    return f"test-{RUN_ID}-tier-{uuid.uuid4().hex[:4]}"
+
+
+def promo_code() -> str:
+    """Return TEST{RUN}{TOKEN} (will be uppercased by API)."""
+    return f"TEST{RUN_ID}{uuid.uuid4().hex[:4]}".upper()
