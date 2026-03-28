@@ -76,18 +76,18 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### API Tests — Checkout
 
-- [ ] **TCHKT-01**: Test calculate endpoint returns line items, subtotal, discount, fees, total, is_free
-- [ ] **TCHKT-02**: Test free checkout (total=0) completes immediately with COMPLETED status
-- [ ] **TCHKT-03**: Test free checkout returns confirmation code and tickets with QR data
-- [ ] **TCHKT-04**: Test paid checkout creates Stripe PaymentIntent and returns client_secret
-- [ ] **TCHKT-05**: Test complete endpoint requires billing_name, billing_email, billing_phone
-- [ ] **TCHKT-06**: Test checkout rejects quantity exceeding tier capacity (400)
-- [ ] **TCHKT-07**: Test checkout rejects quantity below min_per_order (400)
-- [ ] **TCHKT-08**: Test checkout rejects quantity above max_per_order (400)
-- [ ] **TCHKT-09**: Test checkout rejects orders for non-PUBLISHED events (400)
-- [ ] **TCHKT-10**: Test checkout rejects expired promo codes (400)
-- [ ] **TCHKT-11**: Test checkout rejects promo codes exceeding usage limit (400)
-- [ ] **TCHKT-12**: Test promo discount correctly applied to line item totals
+- [x] **TCHKT-01**: Test calculate endpoint returns line items, subtotal, discount, fees, total, is_free
+- [x] **TCHKT-02**: Test free checkout (total=0) completes immediately with COMPLETED status
+- [x] **TCHKT-03**: Test free checkout returns confirmation code and tickets with QR data
+- [x] **TCHKT-04**: Test paid checkout creates Stripe PaymentIntent and returns client_secret
+- [x] **TCHKT-05**: Test complete endpoint requires billing_name, billing_email, billing_phone
+- [x] **TCHKT-06**: Test checkout rejects quantity exceeding tier capacity (400)
+- [x] **TCHKT-07**: Test checkout rejects quantity below min_per_order (400)
+- [x] **TCHKT-08**: Test checkout rejects quantity above max_per_order (400)
+- [x] **TCHKT-09**: Test checkout rejects orders for non-PUBLISHED events (400)
+- [x] **TCHKT-10**: Test checkout rejects expired promo codes (400)
+- [x] **TCHKT-11**: Test checkout rejects promo codes exceeding usage limit (400)
+- [x] **TCHKT-12**: Test promo discount correctly applied to line item totals
 
 ### API Tests — Orders & Tickets
 
@@ -247,18 +247,18 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TPRMO-02 | Phase 2 | Complete |
 | TPRMO-03 | Phase 2 | Complete |
 | TPRMO-04 | Phase 2 | Complete |
-| TCHKT-01 | Phase 3 | Pending |
-| TCHKT-02 | Phase 3 | Pending |
-| TCHKT-03 | Phase 3 | Pending |
-| TCHKT-04 | Phase 3 | Pending |
-| TCHKT-05 | Phase 3 | Pending |
-| TCHKT-06 | Phase 3 | Pending |
-| TCHKT-07 | Phase 3 | Pending |
-| TCHKT-08 | Phase 3 | Pending |
-| TCHKT-09 | Phase 3 | Pending |
-| TCHKT-10 | Phase 3 | Pending |
-| TCHKT-11 | Phase 3 | Pending |
-| TCHKT-12 | Phase 3 | Pending |
+| TCHKT-01 | Phase 3 | Complete |
+| TCHKT-02 | Phase 3 | Complete |
+| TCHKT-03 | Phase 3 | Complete |
+| TCHKT-04 | Phase 3 | Complete |
+| TCHKT-05 | Phase 3 | Complete |
+| TCHKT-06 | Phase 3 | Complete |
+| TCHKT-07 | Phase 3 | Complete |
+| TCHKT-08 | Phase 3 | Complete |
+| TCHKT-09 | Phase 3 | Complete |
+| TCHKT-10 | Phase 3 | Complete |
+| TCHKT-11 | Phase 3 | Complete |
+| TCHKT-12 | Phase 3 | Complete |
 | TORDR-01 | Phase 3 | Pending |
 | TORDR-02 | Phase 3 | Pending |
 | TORDR-03 | Phase 3 | Pending |

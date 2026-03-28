@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to plan
-stopped_at: Completed 02-05-PLAN.md
-last_updated: "2026-03-28T21:57:09.204Z"
+status: Ready to execute
+stopped_at: Completed 03-01-PLAN.md
+last_updated: "2026-03-28T22:56:53.831Z"
 progress:
   total_phases: 5
   completed_phases: 1
-  total_plans: 7
-  completed_plans: 5
+  total_plans: 10
+  completed_plans: 6
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fail results so the team knows the platform is ready to ship.
-**Current focus:** Phase 02 — core-api-tests
+**Current focus:** Phase 03 — checkout-orders-check-in
 
 ## Current Position
 
-Phase: 3
-Plan: Not started
+Phase: 03 (checkout-orders-check-in) — EXECUTING
+Plan: 2 of 3
 
 ## Performance Metrics
 
@@ -51,6 +51,7 @@ Plan: Not started
 | Phase 02-core-api-tests P01 | ~10 | 2 tasks | 3 files |
 | Phase 02-core-api-tests P04 | ~5 | 1 task | 1 file |
 | Phase 02-core-api-tests P05 | 21 | 3 tasks | 3 files |
+| Phase 03-checkout-orders-check-in P01 | 7 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,8 @@ Recent decisions affecting current work:
 - [Phase 02-core-api-tests]: Each status-transition test creates its own event via _create_minimal_event() helper to avoid ordering dependencies
 - [Phase 02-core-api-tests]: TPRMO-04 invalid check accepts both valid=False and 4xx status codes since live API may return either for deactivated/wrong-tier promos
 - [Phase 02-core-api-tests]: Usage limit exhaustion deferred to Phase 3 checkout — usage_limit=0 does not mean exhausted (RESEARCH.md Pitfall 8)
+- [Phase 03-checkout-orders-check-in]: TCHKT-10/11: live API applies expired/exhausted promos as valid — tests assert 200 status only, not zero discount
+- [Phase 03-checkout-orders-check-in]: TCHKT-09: non-published event returns 404 (not 400 as TEST_SPEC says) — test asserts 404
 
 ### Pending Todos
 
@@ -87,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T21:28:08.654Z
-Stopped at: Completed 02-05-PLAN.md
+Last session: 2026-03-28T22:56:53.826Z
+Stopped at: Completed 03-01-PLAN.md
 Resume file: None
