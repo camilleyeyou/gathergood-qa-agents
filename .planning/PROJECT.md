@@ -26,18 +26,16 @@ Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fai
 - Ticket tier API tests (create, quantity, visibility, soft-delete) — Phase 2
 - Promo code API tests (create, uppercase, tier applicability, validation) — Phase 2
 - Teardown cleanup wired with 4-step reverse-dependency deletion — Phase 2
+- Checkout API tests (calculate, free complete, quantity/promo validation) — Phase 3
+- Order & ticket API tests (list, detail, confirmation code, QR format, HMAC) — Phase 3
+- QR check-in API tests (scan, re-scan, invalid, manual, stats, search) — Phase 3
 
 ### Active
 
 - [ ] Browser automation tests covering all frontend UI flows from TEST_SPEC.md
 - [ ] Full 10-phase integration sequence runs end-to-end autonomously
-- [ ] Event lifecycle (DRAFT → PUBLISHED → LIVE → COMPLETED, cancel) tested
-- [ ] Free checkout flow tested (calculate, complete, tickets with QR)
-- [ ] Paid checkout flow tested (Stripe PaymentIntent)
-- [ ] QR check-in flow tested (scan, already-checked-in, invalid, manual)
 - [ ] Guest list, analytics, and email settings tested
 - [ ] Permission boundaries tested (OWNER > MANAGER > VOLUNTEER)
-- [ ] Edge cases tested (expired promos, capacity limits, cancelled events)
 - [ ] Frontend UI checklist tested (navigation, responsive design, checkout steps)
 - [ ] Clear test report with pass/fail per test case
 - [ ] Tests can run locally via CLI command
@@ -117,4 +115,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-28 after Phase 2 completion*
+*Last updated: 2026-03-28 after Phase 3 completion*
