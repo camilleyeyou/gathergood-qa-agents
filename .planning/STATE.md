@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to execute
-stopped_at: Completed 03-02-PLAN.md
-last_updated: "2026-03-28T23:00:20.358Z"
+status: Phase complete — ready for verification
+stopped_at: Completed 03-03-PLAN.md
+last_updated: "2026-03-28T23:01:24.033Z"
 progress:
   total_phases: 5
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 10
-  completed_plans: 7
+  completed_plans: 8
 ---
 
 # Project State
@@ -53,6 +53,7 @@ Plan: 3 of 3
 | Phase 02-core-api-tests P05 | 21 | 3 tasks | 3 files |
 | Phase 03-checkout-orders-check-in P01 | 7 | 2 tasks | 2 files |
 | Phase 03-checkout-orders-check-in P02 | 2 | 1 tasks | 1 files |
+| Phase 03-checkout-orders-check-in P03 | 15 | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -79,6 +80,8 @@ Recent decisions affecting current work:
 - [Phase 03-checkout-orders-check-in]: TCHKT-10/11: live API applies expired/exhausted promos as valid — tests assert 200 status only, not zero discount
 - [Phase 03-checkout-orders-check-in]: TCHKT-09: non-published event returns 404 (not 400 as TEST_SPEC says) — test asserts 404
 - [Phase 03-checkout-orders-check-in]: completed_order fixture is module-scoped to isolate order creation from checkout tests while sharing checkout_event
+- [Phase 03-checkout-orders-check-in]: TCHKN-01/02/03 use different tickets from 2-ticket order to avoid re-scan ordering dependency
+- [Phase 03-checkout-orders-check-in]: TMCHK-02 re-checks same ticket to verify already_checked_in shares status/message keys with QR scan
 
 ### Pending Todos
 
@@ -92,6 +95,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T23:00:20.353Z
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-03-28T23:01:24.028Z
+Stopped at: Completed 03-03-PLAN.md
 Resume file: None

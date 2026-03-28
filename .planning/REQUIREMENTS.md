@@ -101,20 +101,20 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### API Tests — QR Check-In
 
-- [ ] **TCHKN-01**: Test any org member can scan QR to check in attendee
-- [ ] **TCHKN-02**: Test successful scan returns status "success" with attendee details
-- [ ] **TCHKN-03**: Test re-scan returns status "already_checked_in" with original timestamp
-- [ ] **TCHKN-04**: Test invalid/forged QR returns status "invalid"
-- [ ] **TCHKN-05**: Test cancelled/refunded ticket returns status "invalid"
-- [ ] **TCHKN-06**: Test HMAC signature verified on every scan
+- [x] **TCHKN-01**: Test any org member can scan QR to check in attendee
+- [x] **TCHKN-02**: Test successful scan returns status "success" with attendee details
+- [x] **TCHKN-03**: Test re-scan returns status "already_checked_in" with original timestamp
+- [x] **TCHKN-04**: Test invalid/forged QR returns status "invalid"
+- [x] **TCHKN-05**: Test cancelled/refunded ticket returns status "invalid"
+- [x] **TCHKN-06**: Test HMAC signature verified on every scan
 
 ### API Tests — Manual Check-In & Stats
 
-- [ ] **TMCHK-01**: Test manual check-in by ticket ID
-- [ ] **TMCHK-02**: Test same response format as QR scan
-- [ ] **TSTAT-01**: Test check-in stats (total registered, checked in, not checked in, percentage)
-- [ ] **TSTAT-02**: Test stats include per-tier breakdown
-- [ ] **TSRCH-01**: Test search attendees by name, email, or confirmation code
+- [x] **TMCHK-01**: Test manual check-in by ticket ID
+- [x] **TMCHK-02**: Test same response format as QR scan
+- [x] **TSTAT-01**: Test check-in stats (total registered, checked in, not checked in, percentage)
+- [x] **TSTAT-02**: Test stats include per-tier breakdown
+- [x] **TSRCH-01**: Test search attendees by name, email, or confirmation code
 
 ### API Tests — Guest List
 
@@ -266,17 +266,17 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TORDR-05 | Phase 3 | Complete |
 | TORDR-06 | Phase 3 | Complete |
 | TORDR-07 | Phase 3 | Complete |
-| TCHKN-01 | Phase 3 | Pending |
-| TCHKN-02 | Phase 3 | Pending |
-| TCHKN-03 | Phase 3 | Pending |
-| TCHKN-04 | Phase 3 | Pending |
-| TCHKN-05 | Phase 3 | Pending |
-| TCHKN-06 | Phase 3 | Pending |
-| TMCHK-01 | Phase 3 | Pending |
-| TMCHK-02 | Phase 3 | Pending |
-| TSTAT-01 | Phase 3 | Pending |
-| TSTAT-02 | Phase 3 | Pending |
-| TSRCH-01 | Phase 3 | Pending |
+| TCHKN-01 | Phase 3 | Complete |
+| TCHKN-02 | Phase 3 | Complete |
+| TCHKN-03 | Phase 3 | Complete |
+| TCHKN-04 | Phase 3 | Complete |
+| TCHKN-05 | Phase 3 | Complete |
+| TCHKN-06 | Phase 3 | Complete |
+| TMCHK-01 | Phase 3 | Complete |
+| TMCHK-02 | Phase 3 | Complete |
+| TSTAT-01 | Phase 3 | Complete |
+| TSTAT-02 | Phase 3 | Complete |
+| TSRCH-01 | Phase 3 | Complete |
 | TPERM-01 | Phase 4 | Pending |
 | TPERM-02 | Phase 4 | Pending |
 | TPERM-03 | Phase 4 | Pending |

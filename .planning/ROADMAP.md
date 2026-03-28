@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Project scaffold, auth fixture, data factories, teardown harness, and CLI entry point (completed 2026-03-28)
 - [ ] **Phase 2: Core API Tests** - API test coverage for auth, profiles, orgs, teams, venues, events, ticket tiers, and promo codes
-- [ ] **Phase 3: Checkout, Orders & Check-In** - Payment-sensitive checkout tests with Stripe gating, order verification, and QR/manual check-in
+- [x] **Phase 3: Checkout, Orders & Check-In** - Payment-sensitive checkout tests with Stripe gating, order verification, and QR/manual check-in (completed 2026-03-28)
 - [ ] **Phase 4: Permissions, Analytics & Browser UI** - Permission boundary matrix, guest list, email, analytics, public pages, and all Playwright browser tests
 - [ ] **Phase 5: Edge Cases & Reporting** - Edge case coverage, status transition guards, idempotency verification, and HTML report completeness
 
@@ -64,12 +64,12 @@ Plans:
   3. QR check-in tests use real QR strings retrieved from the orders API — re-scan returns "already_checked_in", forged QR returns "invalid"
   4. Manual check-in and check-in stats (per-tier breakdown, percentage) each produce a pass/fail result
   5. Order confirmation code is verified as 10-character alphanumeric and HMAC format is verified as `{order_id}:{tier_id}:{ticket_id}:{hmac_16hex}`
-**Plans:** 2/3 plans executed
+**Plans:** 3/3 plans complete
 
 Plans:
 - [x] 03-01-PLAN.md — Checkout fixtures and all 12 checkout tests (TCHKT-01 to TCHKT-12)
 - [x] 03-02-PLAN.md — Order and ticket tests (TORDR-01 to TORDR-07)
-- [ ] 03-03-PLAN.md — QR/manual check-in, stats, and search tests (TCHKN-01 to TCHKN-06, TMCHK-01/02, TSTAT-01/02, TSRCH-01)
+- [x] 03-03-PLAN.md — QR/manual check-in, stats, and search tests (TCHKN-01 to TCHKN-06, TMCHK-01/02, TSTAT-01/02, TSRCH-01)
 
 ### Phase 4: Permissions, Analytics & Browser UI
 **Goal**: Permission boundaries are verified across all three roles, remaining API domains are covered, and all frontend UI flows pass automated browser tests
@@ -103,6 +103,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-28 |
 | 2. Core API Tests | 2/5 | In progress | - |
-| 3. Checkout, Orders & Check-In | 2/3 | In Progress|  |
+| 3. Checkout, Orders & Check-In | 3/3 | Complete   | 2026-03-28 |
 | 4. Permissions, Analytics & Browser UI | 0/TBD | Not started | - |
 | 5. Edge Cases & Reporting | 0/TBD | Not started | - |
