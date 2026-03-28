@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to plan
-stopped_at: Completed 01-02-PLAN.md
-last_updated: "2026-03-28T19:51:39.654Z"
+status: Executing Phase 02
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-28T21:00:00.000Z"
 progress:
   total_phases: 5
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 7
+  completed_plans: 3
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fail results so the team knows the platform is ready to ship.
-**Current focus:** Phase 01 — foundation
+**Current focus:** Phase 02 — core-api-tests
 
 ## Current Position
 
-Phase: 2
-Plan: Not started
+Phase: 02 (core-api-tests) — EXECUTING
+Plan: 2 of 5
 
 ## Performance Metrics
 
@@ -48,6 +48,7 @@ Plan: Not started
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 7 | 3 tasks | 15 files |
 | Phase 01-foundation P02 | 168 | 2 tasks | 5 files |
+| Phase 02-core-api-tests P01 | ~10 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -64,6 +65,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: Health check accepts 404 on API root — only 5xx or ConnectError aborts session
 - [Phase 01-foundation]: Live API requires password_confirm field on registration — conftest.py updated to include it
 - [Phase 01-foundation]: smoke tests use issubset for teardown_registry key check to allow auth_client's extra test_user_email key
+- [Phase 02-core-api-tests 01]: Teardown runs inside auth_client fixture (not teardown_registry) since auth_client tears down first and still has live HTTP client
+- [Phase 02-core-api-tests 01]: Registry entries store dicts with parent slugs for nested URL routing (not bare IDs)
 
 ### Pending Todos
 
@@ -77,6 +80,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T19:47:35.003Z
-Stopped at: Completed 01-02-PLAN.md
+Last session: 2026-03-28T21:00:00.000Z
+Stopped at: Completed 02-01-PLAN.md
 Resume file: None

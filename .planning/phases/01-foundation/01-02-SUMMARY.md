@@ -76,7 +76,7 @@ Each task was committed atomically:
 1. **Task 1: Non-network smoke tests (imports, factories, teardown)** - `a50cddc` (feat)
 2. **Task 2: Auth fixture integration test + conftest fix** - `0fd8840` (feat)
 
-**Plan metadata:** (docs commit follows)
+**Plan metadata:** `19b7a6f` (docs: complete plan)
 
 ## Files Created/Modified
 - `tests/smoke/test_smoke.py` - Import, settings, marker, and collection smoke tests
@@ -118,6 +118,17 @@ None - no external service configuration required.
 - Teardown registry, factories, and markers all confirmed operational
 - Phase 2 can write API domain tests directly using auth_client and teardown_registry fixtures
 - Known blocker carried forward: Stripe mode (test vs live) of deployed backend still unconfirmed — Phase 3 concern
+
+## Self-Check: PASSED
+
+- FOUND: tests/smoke/test_smoke.py
+- FOUND: tests/smoke/test_factories.py
+- FOUND: tests/smoke/test_teardown.py
+- FOUND: tests/smoke/test_auth_fixture.py
+- FOUND: .planning/phases/01-foundation/01-02-SUMMARY.md
+- FOUND commit: a50cddc (Task 1)
+- FOUND commit: 0fd8840 (Task 2)
+- FOUND commit: 19b7a6f (docs)
 
 ---
 *Phase: 01-foundation*

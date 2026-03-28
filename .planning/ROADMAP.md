@@ -48,7 +48,7 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Teardown cleanup, extended factories, shared session-scoped API fixtures
+- [x] 02-01-PLAN.md — Teardown cleanup, extended factories, shared session-scoped API fixtures
 - [ ] 02-02-PLAN.md — Auth and profile API tests (TAUTH-01 to TAUTH-05, TPROF-01, TPROF-02)
 - [ ] 02-03-PLAN.md — Organization and venue API tests (TORG-01 to TORG-04, TVENU-01 to TVENU-03)
 - [ ] 02-04-PLAN.md — Team management API tests (TTEAM-01 to TTEAM-04)
@@ -97,7 +97,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-28 |
-| 2. Core API Tests | 0/5 | Not started | - |
+| 2. Core API Tests | 1/5 | In progress | - |
 | 3. Checkout, Orders & Check-In | 0/TBD | Not started | - |
 | 4. Permissions, Analytics & Browser UI | 0/TBD | Not started | - |
 | 5. Edge Cases & Reporting | 0/TBD | Not started | - |
