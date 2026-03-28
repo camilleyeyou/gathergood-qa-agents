@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Project scaffold, dependencies, config, factories, helpers, conftest with auth/teardown/markers
+- [x] 01-01-PLAN.md — Project scaffold, dependencies, config, factories, helpers, conftest with auth/teardown/markers
 - [ ] 01-02-PLAN.md — Smoke tests validating foundation against live backend
 
 ### Phase 2: Core API Tests
