@@ -207,13 +207,114 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated by roadmapper) | | |
+| INFR-01 | Phase 1 | Pending |
+| INFR-02 | Phase 1 | Pending |
+| INFR-03 | Phase 1 | Pending |
+| INFR-04 | Phase 1 | Pending |
+| INFR-05 | Phase 1 | Pending |
+| INFR-06 | Phase 1 | Pending |
+| INFR-07 | Phase 1 | Pending |
+| TAUTH-01 | Phase 2 | Pending |
+| TAUTH-02 | Phase 2 | Pending |
+| TAUTH-03 | Phase 2 | Pending |
+| TAUTH-04 | Phase 2 | Pending |
+| TAUTH-05 | Phase 2 | Pending |
+| TPROF-01 | Phase 2 | Pending |
+| TPROF-02 | Phase 2 | Pending |
+| TORG-01 | Phase 2 | Pending |
+| TORG-02 | Phase 2 | Pending |
+| TORG-03 | Phase 2 | Pending |
+| TORG-04 | Phase 2 | Pending |
+| TTEAM-01 | Phase 2 | Pending |
+| TTEAM-02 | Phase 2 | Pending |
+| TTEAM-03 | Phase 2 | Pending |
+| TTEAM-04 | Phase 2 | Pending |
+| TVENU-01 | Phase 2 | Pending |
+| TVENU-02 | Phase 2 | Pending |
+| TVENU-03 | Phase 2 | Pending |
+| TEVNT-01 | Phase 2 | Pending |
+| TEVNT-02 | Phase 2 | Pending |
+| TEVNT-03 | Phase 2 | Pending |
+| TEVNT-04 | Phase 2 | Pending |
+| TEVNT-05 | Phase 2 | Pending |
+| TEVNT-06 | Phase 2 | Pending |
+| TEVNT-07 | Phase 2 | Pending |
+| TTICK-01 | Phase 2 | Pending |
+| TTICK-02 | Phase 2 | Pending |
+| TTICK-03 | Phase 2 | Pending |
+| TTICK-04 | Phase 2 | Pending |
+| TPRMO-01 | Phase 2 | Pending |
+| TPRMO-02 | Phase 2 | Pending |
+| TPRMO-03 | Phase 2 | Pending |
+| TPRMO-04 | Phase 2 | Pending |
+| TCHKT-01 | Phase 3 | Pending |
+| TCHKT-02 | Phase 3 | Pending |
+| TCHKT-03 | Phase 3 | Pending |
+| TCHKT-04 | Phase 3 | Pending |
+| TCHKT-05 | Phase 3 | Pending |
+| TCHKT-06 | Phase 3 | Pending |
+| TCHKT-07 | Phase 3 | Pending |
+| TCHKT-08 | Phase 3 | Pending |
+| TCHKT-09 | Phase 3 | Pending |
+| TCHKT-10 | Phase 3 | Pending |
+| TCHKT-11 | Phase 3 | Pending |
+| TCHKT-12 | Phase 3 | Pending |
+| TORDR-01 | Phase 3 | Pending |
+| TORDR-02 | Phase 3 | Pending |
+| TORDR-03 | Phase 3 | Pending |
+| TORDR-04 | Phase 3 | Pending |
+| TORDR-05 | Phase 3 | Pending |
+| TORDR-06 | Phase 3 | Pending |
+| TORDR-07 | Phase 3 | Pending |
+| TCHKN-01 | Phase 3 | Pending |
+| TCHKN-02 | Phase 3 | Pending |
+| TCHKN-03 | Phase 3 | Pending |
+| TCHKN-04 | Phase 3 | Pending |
+| TCHKN-05 | Phase 3 | Pending |
+| TCHKN-06 | Phase 3 | Pending |
+| TMCHK-01 | Phase 3 | Pending |
+| TMCHK-02 | Phase 3 | Pending |
+| TSTAT-01 | Phase 3 | Pending |
+| TSTAT-02 | Phase 3 | Pending |
+| TSRCH-01 | Phase 3 | Pending |
+| TPERM-01 | Phase 4 | Pending |
+| TPERM-02 | Phase 4 | Pending |
+| TPERM-03 | Phase 4 | Pending |
+| TPERM-04 | Phase 4 | Pending |
+| TPERM-05 | Phase 4 | Pending |
+| TGUST-01 | Phase 4 | Pending |
+| TGUST-02 | Phase 4 | Pending |
+| TEMAL-01 | Phase 4 | Pending |
+| TEMAL-02 | Phase 4 | Pending |
+| TEMAL-03 | Phase 4 | Pending |
+| TEMAL-04 | Phase 4 | Pending |
+| TANLT-01 | Phase 4 | Pending |
+| TANLT-02 | Phase 4 | Pending |
+| TANLT-03 | Phase 4 | Pending |
+| TPUBL-01 | Phase 4 | Pending |
+| TPUBL-02 | Phase 4 | Pending |
+| TPUBL-03 | Phase 4 | Pending |
+| TPUBL-04 | Phase 4 | Pending |
+| TPUBL-05 | Phase 4 | Pending |
+| TFEND-01 | Phase 4 | Pending |
+| TFEND-02 | Phase 4 | Pending |
+| TFEND-03 | Phase 4 | Pending |
+| TFEND-04 | Phase 4 | Pending |
+| TFEND-05 | Phase 4 | Pending |
+| TFEND-06 | Phase 4 | Pending |
+| TFEND-07 | Phase 4 | Pending |
+| TFEND-08 | Phase 4 | Pending |
+| TFEND-09 | Phase 4 | Pending |
+| TFEND-10 | Phase 4 | Pending |
+| TRPT-01 | Phase 5 | Pending |
+| TRPT-02 | Phase 5 | Pending |
+| TRPT-03 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 88 total
-- Mapped to phases: 0
-- Unmapped: 88
+- Mapped to phases: 88
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-28*
-*Last updated: 2026-03-28 after initial definition*
+*Last updated: 2026-03-28 after roadmap creation*
