@@ -60,6 +60,7 @@ def auth_client(teardown_registry):
         json={
             "email": email,
             "password": password,
+            "password_confirm": password,
             "first_name": "Test",
             "last_name": f"User-{RUN_ID}",
         },
