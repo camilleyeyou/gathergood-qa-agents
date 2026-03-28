@@ -38,36 +38,37 @@ created: 2026-03-28
 
 | Task ID | Plan | Wave | Requirement | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|-----------|-------------------|-------------|--------|
-| 01-01-01 | 01 | 1 | AUTH-01 | unit | `pytest tests/test_auth.py::test_register` | ❌ W0 | ⬜ pending |
-| 01-01-02 | 01 | 1 | AUTH-02 | unit | `pytest tests/test_auth.py::test_login` | ❌ W0 | ⬜ pending |
-| 01-01-03 | 01 | 1 | AUTH-03 | unit | `pytest tests/test_auth.py::test_token_refresh` | ❌ W0 | ⬜ pending |
-| 01-01-04 | 01 | 1 | AUTH-04 | unit | `pytest tests/test_auth.py::test_forgot_password` | ❌ W0 | ⬜ pending |
-| 01-01-05 | 01 | 1 | AUTH-05 | unit | `pytest tests/test_auth.py::test_reset_password` | ❌ W0 | ⬜ pending |
-| 01-01-06 | 01 | 1 | PROF-01 | unit | `pytest tests/test_auth.py::test_get_profile` | ❌ W0 | ⬜ pending |
-| 01-01-07 | 01 | 1 | PROF-02 | unit | `pytest tests/test_auth.py::test_update_profile` | ❌ W0 | ⬜ pending |
-| 01-02-01 | 02 | 1 | ORG-01 | unit | `pytest tests/test_orgs.py::test_create_org` | ❌ W0 | ⬜ pending |
-| 01-02-02 | 02 | 1 | ORG-02 | unit | `pytest tests/test_orgs.py::test_list_orgs` | ❌ W0 | ⬜ pending |
-| 01-02-03 | 02 | 1 | ORG-03 | unit | `pytest tests/test_orgs.py::test_update_org` | ❌ W0 | ⬜ pending |
-| 01-02-04 | 02 | 1 | ORG-04 | unit | `pytest tests/test_orgs.py::test_slug_generation` | ❌ W0 | ⬜ pending |
-| 01-03-01 | 03 | 1 | TEAM-01 | unit | `pytest tests/test_team.py::test_invite_member` | ❌ W0 | ⬜ pending |
-| 01-03-02 | 03 | 1 | TEAM-02 | unit | `pytest tests/test_team.py::test_manager_cannot_assign_owner` | ❌ W0 | ⬜ pending |
-| 01-03-03 | 03 | 1 | TEAM-03 | unit | `pytest tests/test_team.py::test_list_members` | ❌ W0 | ⬜ pending |
-| 01-03-04 | 03 | 1 | TEAM-04 | unit | `pytest tests/test_team.py::test_owner_remove_member` | ❌ W0 | ⬜ pending |
-| 01-04-01 | 04 | 1 | VENU-01 | unit | `pytest tests/test_venues.py::test_create_venue` | ❌ W0 | ⬜ pending |
-| 01-04-02 | 04 | 1 | VENU-02 | unit | `pytest tests/test_venues.py::test_list_venues` | ❌ W0 | ⬜ pending |
-| 01-04-03 | 04 | 1 | VENU-03 | unit | `pytest tests/test_venues.py::test_update_venue` | ❌ W0 | ⬜ pending |
+| 01-01-01 | 01 | 1 | AUTH-01 | unit | `pytest apps/accounts/tests/test_auth.py::TestRegister` | W0 | pending |
+| 01-01-02 | 01 | 1 | AUTH-02 | unit | `pytest apps/accounts/tests/test_auth.py::TestLogin` | W0 | pending |
+| 01-01-03 | 01 | 1 | AUTH-03 | unit | `pytest apps/accounts/tests/test_auth.py::TestTokenRefresh` | W0 | pending |
+| 01-01-04 | 01 | 1 | AUTH-04 | unit | `pytest apps/accounts/tests/test_auth.py::TestPasswordReset` | W0 | pending |
+| 01-01-05 | 01 | 1 | AUTH-05 | unit | `pytest apps/accounts/tests/test_auth.py::TestPasswordResetConfirm` | W0 | pending |
+| 01-01-06 | 01 | 1 | PROF-01 | unit | `pytest apps/accounts/tests/test_profile.py::TestGetProfile` | W0 | pending |
+| 01-01-07 | 01 | 1 | PROF-02 | unit | `pytest apps/accounts/tests/test_profile.py::TestUpdateProfile` | W0 | pending |
+| 01-02-01 | 02 | 1 | ORG-01 | unit | `pytest apps/organizations/tests/test_organizations.py::TestCreateOrganization` | W0 | pending |
+| 01-02-02 | 02 | 1 | ORG-02 | unit | `pytest apps/organizations/tests/test_organizations.py::TestListOrganizations` | W0 | pending |
+| 01-02-03 | 02 | 1 | ORG-03 | unit | `pytest apps/organizations/tests/test_organizations.py::TestUpdateOrganization` | W0 | pending |
+| 01-02-04 | 02 | 1 | ORG-04 | unit | `pytest apps/organizations/tests/test_organizations.py::TestSlugGeneration` | W0 | pending |
+| 01-03-01 | 03 | 1 | TEAM-01 | unit | `pytest apps/organizations/tests/test_team.py::TestInviteMember` | W0 | pending |
+| 01-03-02 | 03 | 1 | TEAM-02 | unit | `pytest apps/organizations/tests/test_team.py::TestManagerCannotAssignOwner` | W0 | pending |
+| 01-03-03 | 03 | 1 | TEAM-03 | unit | `pytest apps/organizations/tests/test_team.py::TestListMembers` | W0 | pending |
+| 01-03-04 | 03 | 1 | TEAM-04 | unit | `pytest apps/organizations/tests/test_team.py::TestRemoveMember` | W0 | pending |
+| 01-04-01 | 04 | 1 | VENU-01 | unit | `pytest apps/organizations/tests/test_venues.py::TestCreateVenue` | W0 | pending |
+| 01-04-02 | 04 | 1 | VENU-02 | unit | `pytest apps/organizations/tests/test_venues.py::TestListVenues` | W0 | pending |
+| 01-04-03 | 04 | 1 | VENU-03 | unit | `pytest apps/organizations/tests/test_venues.py::TestUpdateVenue` | W0 | pending |
 
-*Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
+*Status: pending / green / red / flaky*
 
 ---
 
 ## Wave 0 Requirements
 
-- [ ] `backend/tests/test_auth.py` — stubs for AUTH-01 through AUTH-05, PROF-01, PROF-02
-- [ ] `backend/tests/test_orgs.py` — stubs for ORG-01 through ORG-04
-- [ ] `backend/tests/test_team.py` — stubs for TEAM-01 through TEAM-04
-- [ ] `backend/tests/test_venues.py` — stubs for VENU-01 through VENU-03
-- [ ] `backend/tests/conftest.py` — shared fixtures (test user, test org, API client)
+- [ ] `backend/apps/accounts/tests/test_auth.py` — stubs for AUTH-01 through AUTH-05
+- [ ] `backend/apps/accounts/tests/test_profile.py` — stubs for PROF-01, PROF-02
+- [ ] `backend/apps/organizations/tests/test_organizations.py` — stubs for ORG-01 through ORG-04
+- [ ] `backend/apps/organizations/tests/test_team.py` — stubs for TEAM-01 through TEAM-04
+- [ ] `backend/apps/organizations/tests/test_venues.py` — stubs for VENU-01 through VENU-03
+- [ ] `backend/conftest.py` — shared fixtures (test user, test org, API client)
 - [ ] `pytest` — install if not in requirements.txt
 
 *If none: "Existing infrastructure covers all phase requirements."*
