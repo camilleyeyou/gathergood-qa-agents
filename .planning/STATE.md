@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to execute
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-03-28T19:41:45.497Z"
+status: Phase complete — ready for verification
+stopped_at: Completed 01-02-PLAN.md
+last_updated: "2026-03-28T19:47:35.008Z"
 progress:
   total_phases: 5
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -47,6 +47,7 @@ Plan: 2 of 2
 
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 7 | 3 tasks | 15 files |
+| Phase 01-foundation P02 | 168 | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -61,6 +62,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: Install packages for both Python 3.11 and 3.13 since both are on PATH
 - [Phase 01-foundation]: pytest exit code 5 (NO_TESTS_COLLECTED) is correct behavior for empty test suite
 - [Phase 01-foundation]: Health check accepts 404 on API root — only 5xx or ConnectError aborts session
+- [Phase 01-foundation]: Live API requires password_confirm field on registration — conftest.py updated to include it
+- [Phase 01-foundation]: smoke tests use issubset for teardown_registry key check to allow auth_client's extra test_user_email key
 
 ### Pending Todos
 
@@ -74,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T19:41:45.492Z
-Stopped at: Completed 01-01-PLAN.md
+Last session: 2026-03-28T19:47:35.003Z
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None

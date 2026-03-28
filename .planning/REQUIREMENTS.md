@@ -11,9 +11,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **INFR-01**: Project scaffolded with pytest, httpx, and Playwright Python bindings
 - [x] **INFR-02**: Environment config via pydantic-settings (.env for BASE_URL, credentials, secrets)
-- [ ] **INFR-03**: Session-scoped JWT auth fixture that registers/logs in and auto-refreshes tokens before expiry
+- [x] **INFR-03**: Session-scoped JWT auth fixture that registers/logs in and auto-refreshes tokens before expiry
 - [x] **INFR-04**: Unique test data factories using uuid4 suffixes to avoid live DB pollution
-- [ ] **INFR-05**: Teardown harness that cleans up test-created data after each run where API allows
+- [x] **INFR-05**: Teardown harness that cleans up test-created data after each run where API allows
 - [x] **INFR-06**: Requirement ID markers (@pytest.mark.req) mapping each test to its TEST_SPEC ID
 - [x] **INFR-07**: Single CLI command to run the full test suite (pytest entry point)
 
@@ -209,9 +209,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | INFR-01 | Phase 1 | Complete |
 | INFR-02 | Phase 1 | Complete |
-| INFR-03 | Phase 1 | Pending |
+| INFR-03 | Phase 1 | Complete |
 | INFR-04 | Phase 1 | Complete |
-| INFR-05 | Phase 1 | Pending |
+| INFR-05 | Phase 1 | Complete |
 | INFR-06 | Phase 1 | Complete |
 | INFR-07 | Phase 1 | Complete |
 | TAUTH-01 | Phase 2 | Pending |
