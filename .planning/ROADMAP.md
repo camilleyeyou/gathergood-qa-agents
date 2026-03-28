@@ -30,7 +30,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. All test-created resources use unique `test-{run-id}-` prefixed names, preventing collision with live data across runs
   4. The teardown harness deletes test-created resources in reverse dependency order after the session, leaving the live database clean
   5. Each test function carries a `@pytest.mark.req("SPEC-ID")` marker that links it to its TEST_SPEC.md requirement
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Project scaffold, dependencies, config, factories, helpers, conftest with auth/teardown/markers
+- [ ] 01-02-PLAN.md — Smoke tests validating foundation against live backend
 
 ### Phase 2: Core API Tests
 **Goal**: All core domain API endpoints are covered by tests that produce clear pass/fail results mapped to TEST_SPEC requirement IDs
@@ -85,7 +89,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/2 | Planning complete | - |
 | 2. Core API Tests | 0/TBD | Not started | - |
 | 3. Checkout, Orders & Check-In | 0/TBD | Not started | - |
 | 4. Permissions, Analytics & Browser UI | 0/TBD | Not started | - |
