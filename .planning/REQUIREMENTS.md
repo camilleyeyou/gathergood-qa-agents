@@ -144,11 +144,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### API Tests — Permission Boundaries
 
-- [ ] **TPERM-01**: Test VOLUNTEER cannot create events (403)
-- [ ] **TPERM-02**: Test VOLUNTEER cannot invite members (403)
-- [ ] **TPERM-03**: Test MANAGER cannot assign OWNER role (403)
-- [ ] **TPERM-04**: Test MANAGER cannot remove members (403)
-- [ ] **TPERM-05**: Test non-org-member cannot access org resources (403)
+- [x] **TPERM-01**: Test VOLUNTEER cannot create events (403)
+- [x] **TPERM-02**: Test VOLUNTEER cannot invite members (403)
+- [x] **TPERM-03**: Test MANAGER cannot assign OWNER role (403)
+- [x] **TPERM-04**: Test MANAGER cannot remove members (403)
+- [x] **TPERM-05**: Test non-org-member cannot access org resources (403)
 
 ### Browser Tests — Frontend & UX
 
@@ -277,11 +277,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TSTAT-01 | Phase 3 | Complete |
 | TSTAT-02 | Phase 3 | Complete |
 | TSRCH-01 | Phase 3 | Complete |
-| TPERM-01 | Phase 4 | Pending |
-| TPERM-02 | Phase 4 | Pending |
-| TPERM-03 | Phase 4 | Pending |
-| TPERM-04 | Phase 4 | Pending |
-| TPERM-05 | Phase 4 | Pending |
+| TPERM-01 | Phase 4 | Complete |
+| TPERM-02 | Phase 4 | Complete |
+| TPERM-03 | Phase 4 | Complete |
+| TPERM-04 | Phase 4 | Complete |
+| TPERM-05 | Phase 4 | Complete |
 | TGUST-01 | Phase 4 | Pending |
 | TGUST-02 | Phase 4 | Pending |
 | TEMAL-01 | Phase 4 | Pending |

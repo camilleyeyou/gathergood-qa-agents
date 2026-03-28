@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: Ready to execute
-stopped_at: Completed 04-03-PLAN.md
-last_updated: "2026-03-28T23:44:19.753Z"
+stopped_at: Completed 04-01-PLAN.md
+last_updated: "2026-03-28T23:45:06.670Z"
 progress:
   total_phases: 5
   completed_phases: 2
   total_plans: 15
-  completed_plans: 9
+  completed_plans: 10
 ---
 
 # Project State
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-03-28)
 ## Current Position
 
 Phase: 04 (permissions-analytics-browser-ui) — EXECUTING
-Plan: 2 of 5
+Plan: 3 of 5
 
 ## Performance Metrics
 
@@ -55,6 +55,7 @@ Plan: 2 of 5
 | Phase 03-checkout-orders-check-in P02 | 2 | 1 tasks | 1 files |
 | Phase 03-checkout-orders-check-in P03 | 15 | 2 tasks | 1 files |
 | Phase 04-permissions-analytics-browser-ui P03 | 13 | 1 tasks | 1 files |
+| Phase 04-permissions-analytics-browser-ui P01 | 7 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -85,6 +86,8 @@ Recent decisions affecting current work:
 - [Phase 03-checkout-orders-check-in]: TMCHK-02 re-checks same ticket to verify already_checked_in shares status/message keys with QR scan
 - [Phase 04-permissions-analytics-browser-ui]: TPUBL-01: ?format= filter returns 404 on live API — test skips format filter
 - [Phase 04-permissions-analytics-browser-ui]: TPUBL-04/05: ticket_tiers visibility field stripped in public response — verified by tier name prefixes
+- [Phase 04-permissions-analytics-browser-ui]: TPERM-01 assertion broadened: live API message is 'Only managers and owners can perform this action.' — not 'permission' — assertion checks either pattern
+- [Phase 04-permissions-analytics-browser-ui]: TPERM-05 asserts 404 not 403 — Django queryset-level filtering hides org from non-members entirely
 
 ### Pending Todos
 
@@ -98,6 +101,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T23:44:19.748Z
-Stopped at: Completed 04-03-PLAN.md
+Last session: 2026-03-28T23:45:06.666Z
+Stopped at: Completed 04-01-PLAN.md
 Resume file: None
