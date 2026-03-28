@@ -55,17 +55,17 @@ Exceptions:
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
 | Body | 16px | 400 (regular) | 1.5 | Form field labels, paragraph text, list items, table cell content |
-| Label | 14px | 500 (medium) | 1.4 | Input labels, helper text, table column headers, nav links, badge text |
+| Label | 14px | 400 (regular) | 1.4 | Input labels, helper text, table column headers, nav links, badge text |
 | Heading | 20px | 600 (semibold) | 1.3 | Page titles, card headings, dialog titles, section headers |
-| Display | 28px | 700 (bold) | 1.2 | Auth screen titles (/register, /login, /forgot-password) only |
+| Display | 28px | 600 (semibold) | 1.2 | Auth screen titles (/register, /login, /forgot-password) only |
 
 **Font family:** Inter (next/font/google — subsets: latin, variable font)
 
-**Weights declared:** 400, 500, 600, 700 — loaded via `next/font` weight array to avoid FOUT.
+**Weights declared:** 400, 600 — loaded via `next/font` weight array `['400', '600']` to avoid FOUT.
 
 **Notes:**
-- Body and Label share Inter — only size and weight differ
-- Display is reserved for the four auth screens; do not use on manage/ routes
+- Body and Label share Inter — only size differs; both use weight 400
+- Heading and Display both use weight 600; Display is reserved for the four auth screens only — do not use on manage/ routes
 - Monospace exception: confirmation codes rendered in `font-mono` (system stack) at 20px weight 600
 
 ---
@@ -134,13 +134,17 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 
 ### /register
 
+**Focal point:** The "Create account" button (accent fill, full-width) is the visual anchor. All form fields lead the eye downward to this single CTA. No competing actions above the fold.
+
+**Visual hierarchy:** Display title (28px/600) establishes page identity → Body fields (16px/400) collect information → Full-width accent CTA closes the flow. Secondary link ("Already have an account?") sits below the CTA at Label size (14px/400) in muted color.
+
 **Layout:** Centered single-column card. Max-width 400px. Vertical padding: 64px (3xl) top/bottom on outer container.
 
 **Fields:** First Name, Last Name, Email, Password, Confirm Password.
 
 **Interactions:**
 - All fields validated on blur via Zod + react-hook-form
-- Password field: show/hide toggle (Eye icon from lucide-react, 20px, muted color)
+- Password field: show/hide toggle (Eye icon from lucide-react, 20px, muted color; `aria-label="Show password"` when hidden, `aria-label="Hide password"` when visible)
 - Submit button: full-width, accent fill, label "Create account"
 - On submit: button enters loading state (spinner replaces label, button disabled)
 - On API error (400 email exists): inline Alert component below email field — "An account with this email already exists."
@@ -153,12 +157,16 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 
 ### /login
 
+**Focal point:** The "Log in" button (accent fill, full-width) is the visual anchor. Two fields and one CTA — no visual clutter.
+
+**Visual hierarchy:** Display title (28px/600) → Email and Password fields (16px/400) → Full-width accent CTA → Secondary links (14px/400, muted) for forgot password and register.
+
 **Layout:** Centered single-column card. Max-width 400px. Vertical padding: 64px top/bottom.
 
 **Fields:** Email, Password.
 
 **Interactions:**
-- Password field: show/hide toggle
+- Password field: show/hide toggle (`aria-label="Show password"` when hidden, `aria-label="Hide password"` when visible)
 - Submit button: full-width, accent fill, label "Log in"
 - On submit: loading state
 - On API error (401): inline Alert below password field — "Incorrect email or password."
@@ -171,6 +179,10 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 ---
 
 ### /forgot-password
+
+**Focal point:** The "Send reset link" button (accent fill, full-width) is the visual anchor. Single email field minimizes friction.
+
+**Visual hierarchy:** Display title (28px/600) → Single email field (16px/400) → Full-width accent CTA → "Back to login" link (14px/400, muted) at card top as secondary escape.
 
 **Layout:** Centered single-column card. Max-width 400px. Vertical padding: 64px.
 
@@ -188,12 +200,16 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 
 ### /reset-password
 
+**Focal point:** The "Reset password" button (accent fill, full-width) is the visual anchor. Two password fields with show/hide toggles are the only interactive elements.
+
+**Visual hierarchy:** Display title (28px/600) → Two password fields (16px/400) → Full-width accent CTA. Expired-token Alert appears above the form at the same visual weight as field errors.
+
 **Layout:** Centered single-column card. Max-width 400px. Vertical padding: 64px.
 
 **Fields:** New Password, Confirm New Password.
 
 **Interactions:**
-- Both fields: show/hide toggle
+- Both fields: show/hide toggle (`aria-label="Show password"` when hidden, `aria-label="Hide password"` when visible)
 - Submit button: full-width, accent fill, label "Reset password"
 - On submit: loading state
 - On API error (invalid/expired token): Alert — "This reset link has expired or is invalid. Request a new one." with link to /forgot-password
@@ -204,6 +220,10 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 ---
 
 ### /my/settings
+
+**Focal point:** The "Save changes" button (accent fill, right-aligned) is the visual anchor for each section. Avatar preview provides secondary visual interest when a URL is supplied.
+
+**Visual hierarchy:** Section Heading (20px/600) labels each group → form fields (16px/400) below → right-aligned accent CTA closes each section. Read-only email field rendered at lower visual weight (muted foreground color) to signal non-editability.
 
 **Layout:** Single-column content area, max-width 640px, left-aligned within manage layout shell.
 
@@ -224,6 +244,10 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 
 ### /manage (Organizer Dashboard — Org List)
 
+**Focal point:** In empty state, the "Create organization" CTA (accent fill) is the visual anchor, centered in the content area. In populated state, the "New organization" button (top-right, accent fill) anchors the header; org cards draw the eye with name as the dominant text element.
+
+**Visual hierarchy:** Page heading (20px/600) → card grid with org name as Heading (20px/600) per card, slug and member count as Label (14px/400, muted) below. Empty state heading (20px/600) → body copy (16px/400) → centered CTA.
+
 **Layout:** Manage layout shell (sidebar nav + content area). Content area: list of org cards.
 
 **Empty state:**
@@ -243,6 +267,10 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 
 ### /manage/org/new
 
+**Focal point:** The "Create organization" button (accent fill) is the visual anchor at the base of the single-field form.
+
+**Visual hierarchy:** Page heading (20px/600) → Organization Name field (16px/400) → slug preview in Label (14px/400, muted) → full-width accent CTA → "Back to organizations" cancel link (14px/400, muted).
+
 **Layout:** Single-column form, max-width 640px.
 
 **Fields:** Organization Name (required). Slug shown as read-only preview below name field, updated in real-time as user types — format: `gathergood.com/org/{slug-preview}` in muted Label text.
@@ -259,6 +287,10 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 ---
 
 ### /manage/org/{slug}
+
+**Focal point:** The "Save changes" button (accent fill, right-aligned) anchors the org details form. Sub-navigation tabs below the org heading draw secondary attention.
+
+**Visual hierarchy:** Org name as Heading (20px/600) → editable fields (16px/400) → right-aligned accent CTA → tab nav (Label 14px/400) separating Team and Venues sub-pages. VOLUNTEER read-only state: disabled inputs render at lower visual weight to communicate non-editability without confusion.
 
 **Layout:** Two-section page within manage shell. Top section: org details form. Below: navigation tabs or links to Team and Venues sub-pages.
 
@@ -277,6 +309,10 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 ---
 
 ### /manage/org/{slug}/team
+
+**Focal point:** The "Invite member" button (accent fill, top-right of content header) is the primary visual anchor. Role badges provide secondary color interest to guide the eye across table rows.
+
+**Visual hierarchy:** "Team" Heading (20px/600) + right-aligned accent CTA in the header row → table column headers as Label (14px/400) → member name as Body (16px/400) dominant per row, role badge and action button as secondary elements. Remove button (ghost, destructive color) is intentionally low-contrast to prevent accidental activation.
 
 **Layout:** Content area within manage shell. Header row: "Team" heading + "Invite member" button (accent fill, right-aligned).
 
@@ -310,6 +346,10 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 
 ### /manage/org/{slug}/venues
 
+**Focal point:** The "Add venue" button (accent fill, top-right of content header) is the primary visual anchor in all states. In empty state, the inline "Add venue" CTA (centered) is the sole focal point.
+
+**Visual hierarchy:** "Venues" Heading (20px/600) + right-aligned accent CTA in the header row → table column headers as Label (14px/400) → venue name as Body (16px/400) dominant per row. Empty state: Heading (20px/600) → body copy (16px/400) → centered accent CTA.
+
 **Layout:** Content area within manage shell. Header: "Venues" heading + "Add venue" button (accent fill).
 
 **Table columns:** Name, Address, City, Capacity, Actions (Edit).
@@ -335,6 +375,14 @@ Components required in Phase 1 (sourced from shadcn official registry only):
 
 ### Navbar (Auth-Aware)
 
+**Focal point:** In logged-out state, the "Sign up" button (accent fill, right-aligned) is the visual anchor. In logged-in state, the GatherGood wordmark (accent color) anchors the left; the Avatar dropdown trigger anchors the right.
+
+**Visual hierarchy (desktop):** Wordmark (Inter 600, 18px, accent) → center nav links (Label 14px/400) with active route indicated by 2px accent bottom border → Avatar trigger (right) as secondary CTA. Mobile: Wordmark → hamburger icon (right-aligned, 24px) as the sole secondary element, replacing all center nav.
+
+**Icon-only accessible labels:**
+- Password show/hide Eye icon: `aria-label="Show password"` (when password hidden) / `aria-label="Hide password"` (when password visible)
+- Mobile hamburger Menu icon: `aria-label="Open navigation menu"` (when closed) / `aria-label="Close navigation menu"` (when sheet is open)
+
 **Layout:** Full-width top bar. Height: 56px. Background: secondary surface (#F9FAFB). Bottom border: 1px solid `--border`. Sticky at top.
 
 **Logged-out state:**
@@ -348,8 +396,8 @@ Components required in Phase 1 (sourced from shadcn official registry only):
   - Dropdown items: "Settings" → /my/settings, divider, "Log out" (triggers token clear + redirect to /login)
 
 **Mobile (< 768px):**
-- Hamburger menu button (Menu icon from lucide-react, 24px) replaces center nav
-- Drawer or sheet opens with all nav links stacked vertically (per FEND-03)
+- Hamburger menu button (Menu icon from lucide-react, 24px; `aria-label="Open navigation menu"`) replaces center nav
+- Drawer or sheet opens with all nav links stacked vertically (per FEND-03); button `aria-label` updates to `"Close navigation menu"` while sheet is open
 - Use shadcn Sheet component (`npx shadcn add sheet`) for mobile nav drawer
 
 **Active link indicator:** 2px bottom border in accent color (#0D9488) on current route link (desktop). Accent text color on current route in mobile drawer.
@@ -416,6 +464,9 @@ No third-party registries declared for Phase 1.
 | Role badge behavior | REQUIREMENTS.md TEAM-02 |
 | Empty/error/destructive copy | Derived from requirement success criteria |
 | Component selection | STACK.md (react-hook-form, lucide-react, shadcn) |
+| Typography weight reduction (4 → 2) | Checker revision 2026-03-28 |
+| Focal point + visual hierarchy statements | Checker revision 2026-03-28 |
+| aria-label specifications (Eye, hamburger) | Checker revision 2026-03-28 |
 
 ---
 
