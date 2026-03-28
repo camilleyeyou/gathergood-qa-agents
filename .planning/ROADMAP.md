@@ -31,7 +31,16 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A user can create an organization and be automatically assigned the OWNER role; a MANAGER they invite cannot assign the OWNER role to others
   4. An OWNER can remove a team member; any org member can list team members and view venues
   5. An org member can create, list, and update venues for their organization
-**Plans**: TBD
+**Plans**: 6 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Project scaffold (Django backend, Next.js frontend, models, test infrastructure)
+- [ ] 01-02-PLAN.md — Auth backend (register, login, JWT, password reset, profile endpoints)
+- [ ] 01-03-PLAN.md — Org/team/venue backend (CRUD, RBAC, slug generation)
+- [ ] 01-04-PLAN.md — Auth frontend (token management, auth screens, profile settings)
+- [ ] 01-05-PLAN.md — Manage frontend (Navbar, org dashboard, team, venues)
+- [ ] 01-06-PLAN.md — Integration verification and human checkpoint
+
 **UI hint**: yes
 
 ### Phase 2: Events
@@ -101,7 +110,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/6 | Planning complete | - |
 | 2. Events | 0/TBD | Not started | - |
 | 3. Checkout & Orders | 0/TBD | Not started | - |
 | 4. QR Check-In | 0/TBD | Not started | - |
