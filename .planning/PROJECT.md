@@ -12,7 +12,11 @@ Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fai
 
 ### Validated
 
-(None yet — ship to validate)
+- Test harness scaffold with pytest + httpx + Playwright — Phase 1
+- JWT auth fixture with token refresh against live backend — Phase 1
+- Unique test data factories (uuid4 prefixes) for live DB isolation — Phase 1
+- Teardown registry for test cleanup — Phase 1
+- @pytest.mark.req markers linking tests to TEST_SPEC IDs — Phase 1
 
 ### Active
 
@@ -107,4 +111,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-28 after initialization*
+*Last updated: 2026-03-28 after Phase 1 completion*
