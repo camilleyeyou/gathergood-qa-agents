@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+reports/*.html
+reports/*.xml
+playwright/.auth/
+*.egg-info/
+dist/
+build/

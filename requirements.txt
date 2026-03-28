@@ -1,0 +1,8 @@
+pytest==9.0.2
+httpx==0.28.1
+playwright==1.58.0
+pytest-playwright==0.7.2
+pydantic-settings==2.13.1
+python-dotenv>=1.0.0
+faker>=33.0.0
+pytest-html>=4.0.0
