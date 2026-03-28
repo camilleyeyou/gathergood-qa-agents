@@ -45,7 +45,14 @@ Plans:
   2. The full org-to-event chain (create org → create team → create venue → create event → publish → cancel) runs end-to-end with no test-order dependencies
   3. Ticket tier visibility options and promo code validation rules each produce an explicit test result
   4. Every test in this phase carries a requirement ID marker and appears by name in the console output
-**Plans**: TBD
+**Plans:** 5 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Teardown cleanup, extended factories, shared session-scoped API fixtures
+- [ ] 02-02-PLAN.md — Auth and profile API tests (TAUTH-01 to TAUTH-05, TPROF-01, TPROF-02)
+- [ ] 02-03-PLAN.md — Organization and venue API tests (TORG-01 to TORG-04, TVENU-01 to TVENU-03)
+- [ ] 02-04-PLAN.md — Team management API tests (TTEAM-01 to TTEAM-04)
+- [ ] 02-05-PLAN.md — Event, ticket tier, and promo code API tests (TEVNT-01 to TEVNT-07, TTICK-01 to TTICK-04, TPRMO-01 to TPRMO-04)
 
 ### Phase 3: Checkout, Orders & Check-In
 **Goal**: Checkout, order, and check-in flows are fully tested with Stripe live-mode damage prevention in place
@@ -90,7 +97,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-28 |
-| 2. Core API Tests | 0/TBD | Not started | - |
+| 2. Core API Tests | 0/5 | Not started | - |
 | 3. Checkout, Orders & Check-In | 0/TBD | Not started | - |
 | 4. Permissions, Analytics & Browser UI | 0/TBD | Not started | - |
 | 5. Edge Cases & Reporting | 0/TBD | Not started | - |
