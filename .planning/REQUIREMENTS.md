@@ -190,102 +190,102 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | TBD | Pending |
-| AUTH-02 | TBD | Pending |
-| AUTH-03 | TBD | Pending |
-| AUTH-04 | TBD | Pending |
-| AUTH-05 | TBD | Pending |
-| PROF-01 | TBD | Pending |
-| PROF-02 | TBD | Pending |
-| ORG-01 | TBD | Pending |
-| ORG-02 | TBD | Pending |
-| ORG-03 | TBD | Pending |
-| ORG-04 | TBD | Pending |
-| TEAM-01 | TBD | Pending |
-| TEAM-02 | TBD | Pending |
-| TEAM-03 | TBD | Pending |
-| TEAM-04 | TBD | Pending |
-| VENU-01 | TBD | Pending |
-| VENU-02 | TBD | Pending |
-| VENU-03 | TBD | Pending |
-| EVNT-01 | TBD | Pending |
-| EVNT-02 | TBD | Pending |
-| EVNT-03 | TBD | Pending |
-| EVNT-04 | TBD | Pending |
-| EVNT-05 | TBD | Pending |
-| EVNT-06 | TBD | Pending |
-| EVNT-07 | TBD | Pending |
-| EVNT-08 | TBD | Pending |
-| EVNT-09 | TBD | Pending |
-| TICK-01 | TBD | Pending |
-| TICK-02 | TBD | Pending |
-| TICK-03 | TBD | Pending |
-| TICK-04 | TBD | Pending |
-| PRMO-01 | TBD | Pending |
-| PRMO-02 | TBD | Pending |
-| PRMO-03 | TBD | Pending |
-| PRMO-04 | TBD | Pending |
-| CHKT-01 | TBD | Pending |
-| CHKT-02 | TBD | Pending |
-| CHKT-03 | TBD | Pending |
-| CHKT-04 | TBD | Pending |
-| CHKT-05 | TBD | Pending |
-| CHKT-06 | TBD | Pending |
-| CHKT-07 | TBD | Pending |
-| CHKT-08 | TBD | Pending |
-| CHKT-09 | TBD | Pending |
-| CHKT-10 | TBD | Pending |
-| CHKT-11 | TBD | Pending |
-| CHKT-12 | TBD | Pending |
-| ORDR-01 | TBD | Pending |
-| ORDR-02 | TBD | Pending |
-| ORDR-03 | TBD | Pending |
-| ORDR-04 | TBD | Pending |
-| ORDR-05 | TBD | Pending |
-| ORDR-06 | TBD | Pending |
-| ORDR-07 | TBD | Pending |
-| CHKN-01 | TBD | Pending |
-| CHKN-02 | TBD | Pending |
-| CHKN-03 | TBD | Pending |
-| CHKN-04 | TBD | Pending |
-| CHKN-05 | TBD | Pending |
-| CHKN-06 | TBD | Pending |
-| MCHK-01 | TBD | Pending |
-| MCHK-02 | TBD | Pending |
-| STAT-01 | TBD | Pending |
-| STAT-02 | TBD | Pending |
-| STAT-03 | TBD | Pending |
-| SRCH-01 | TBD | Pending |
-| GUST-01 | TBD | Pending |
-| GUST-02 | TBD | Pending |
-| ANLT-01 | TBD | Pending |
-| ANLT-02 | TBD | Pending |
-| ANLT-03 | TBD | Pending |
-| EMAL-01 | TBD | Pending |
-| EMAL-02 | TBD | Pending |
-| EMAL-03 | TBD | Pending |
-| EMAL-04 | TBD | Pending |
-| PUBL-01 | TBD | Pending |
-| PUBL-02 | TBD | Pending |
-| PUBL-03 | TBD | Pending |
-| PUBL-04 | TBD | Pending |
-| PUBL-05 | TBD | Pending |
-| FEND-01 | TBD | Pending |
-| FEND-02 | TBD | Pending |
-| FEND-03 | TBD | Pending |
-| FEND-04 | TBD | Pending |
-| FEND-05 | TBD | Pending |
-| FEND-06 | TBD | Pending |
-| FEND-07 | TBD | Pending |
-| FEND-08 | TBD | Pending |
-| FEND-09 | TBD | Pending |
-| FEND-10 | TBD | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| AUTH-05 | Phase 1 | Pending |
+| PROF-01 | Phase 1 | Pending |
+| PROF-02 | Phase 1 | Pending |
+| ORG-01 | Phase 1 | Pending |
+| ORG-02 | Phase 1 | Pending |
+| ORG-03 | Phase 1 | Pending |
+| ORG-04 | Phase 1 | Pending |
+| TEAM-01 | Phase 1 | Pending |
+| TEAM-02 | Phase 1 | Pending |
+| TEAM-03 | Phase 1 | Pending |
+| TEAM-04 | Phase 1 | Pending |
+| VENU-01 | Phase 1 | Pending |
+| VENU-02 | Phase 1 | Pending |
+| VENU-03 | Phase 1 | Pending |
+| EVNT-01 | Phase 2 | Pending |
+| EVNT-02 | Phase 2 | Pending |
+| EVNT-03 | Phase 2 | Pending |
+| EVNT-04 | Phase 2 | Pending |
+| EVNT-05 | Phase 2 | Pending |
+| EVNT-06 | Phase 2 | Pending |
+| EVNT-07 | Phase 2 | Pending |
+| EVNT-08 | Phase 2 | Pending |
+| EVNT-09 | Phase 2 | Pending |
+| TICK-01 | Phase 2 | Pending |
+| TICK-02 | Phase 2 | Pending |
+| TICK-03 | Phase 2 | Pending |
+| TICK-04 | Phase 2 | Pending |
+| PRMO-01 | Phase 2 | Pending |
+| PRMO-02 | Phase 2 | Pending |
+| PRMO-03 | Phase 2 | Pending |
+| PRMO-04 | Phase 2 | Pending |
+| PUBL-01 | Phase 2 | Pending |
+| PUBL-02 | Phase 2 | Pending |
+| PUBL-03 | Phase 2 | Pending |
+| PUBL-04 | Phase 2 | Pending |
+| PUBL-05 | Phase 2 | Pending |
+| FEND-01 | Phase 2 | Pending |
+| FEND-02 | Phase 2 | Pending |
+| FEND-03 | Phase 2 | Pending |
+| CHKT-01 | Phase 3 | Pending |
+| CHKT-02 | Phase 3 | Pending |
+| CHKT-03 | Phase 3 | Pending |
+| CHKT-04 | Phase 3 | Pending |
+| CHKT-05 | Phase 3 | Pending |
+| CHKT-06 | Phase 3 | Pending |
+| CHKT-07 | Phase 3 | Pending |
+| CHKT-08 | Phase 3 | Pending |
+| CHKT-09 | Phase 3 | Pending |
+| CHKT-10 | Phase 3 | Pending |
+| CHKT-11 | Phase 3 | Pending |
+| CHKT-12 | Phase 3 | Pending |
+| ORDR-01 | Phase 3 | Pending |
+| ORDR-02 | Phase 3 | Pending |
+| ORDR-03 | Phase 3 | Pending |
+| ORDR-04 | Phase 3 | Pending |
+| ORDR-05 | Phase 3 | Pending |
+| ORDR-06 | Phase 3 | Pending |
+| ORDR-07 | Phase 3 | Pending |
+| CHKN-01 | Phase 4 | Pending |
+| CHKN-02 | Phase 4 | Pending |
+| CHKN-03 | Phase 4 | Pending |
+| CHKN-04 | Phase 4 | Pending |
+| CHKN-05 | Phase 4 | Pending |
+| CHKN-06 | Phase 4 | Pending |
+| MCHK-01 | Phase 4 | Pending |
+| MCHK-02 | Phase 4 | Pending |
+| STAT-01 | Phase 4 | Pending |
+| STAT-02 | Phase 4 | Pending |
+| STAT-03 | Phase 4 | Pending |
+| SRCH-01 | Phase 4 | Pending |
+| GUST-01 | Phase 4 | Pending |
+| GUST-02 | Phase 4 | Pending |
+| EMAL-01 | Phase 5 | Pending |
+| EMAL-02 | Phase 5 | Pending |
+| EMAL-03 | Phase 5 | Pending |
+| EMAL-04 | Phase 5 | Pending |
+| ANLT-01 | Phase 6 | Pending |
+| ANLT-02 | Phase 6 | Pending |
+| ANLT-03 | Phase 6 | Pending |
+| FEND-04 | Phase 6 | Pending |
+| FEND-05 | Phase 6 | Pending |
+| FEND-06 | Phase 6 | Pending |
+| FEND-07 | Phase 6 | Pending |
+| FEND-08 | Phase 6 | Pending |
+| FEND-09 | Phase 6 | Pending |
+| FEND-10 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 79 total
-- Mapped to phases: 0
-- Unmapped: 79 (pending roadmap creation)
+- Mapped to phases: 79
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-28*
-*Last updated: 2026-03-28 after initial definition*
+*Last updated: 2026-03-28 after roadmap creation*
