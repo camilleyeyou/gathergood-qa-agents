@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: Executing Phase 02
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-03-28T21:00:00.000Z"
+stopped_at: Completed 02-04-PLAN.md
+last_updated: "2026-03-28T21:30:00.000Z"
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 7
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # Project State
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-03-28)
 ## Current Position
 
 Phase: 02 (core-api-tests) — EXECUTING
-Plan: 2 of 5
+Plan: 5 of 5
 
 ## Performance Metrics
 
@@ -49,6 +49,7 @@ Plan: 2 of 5
 | Phase 01-foundation P01 | 7 | 3 tasks | 15 files |
 | Phase 01-foundation P02 | 168 | 2 tasks | 5 files |
 | Phase 02-core-api-tests P01 | ~10 | 2 tasks | 3 files |
+| Phase 02-core-api-tests P04 | ~5 | 1 task | 1 file |
 
 ## Accumulated Context
 
@@ -67,6 +68,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: smoke tests use issubset for teardown_registry key check to allow auth_client's extra test_user_email key
 - [Phase 02-core-api-tests 01]: Teardown runs inside auth_client fixture (not teardown_registry) since auth_client tears down first and still has live HTTP client
 - [Phase 02-core-api-tests 01]: Registry entries store dicts with parent slugs for nested URL routing (not bare IDs)
+- [Phase 02-core-api-tests 04]: _create_user_client() returns plain httpx.Client (not the auth_client wrapper) — secondary users don't need JWT auto-refresh for short-lived permission tests
+- [Phase 02-core-api-tests 04]: TTEAM-04 fetches membership_id via OWNER client GET /members/ — membership ID (not user UUID) used for DELETE
 
 ### Pending Todos
 
@@ -80,6 +83,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T21:00:00.000Z
-Stopped at: Completed 02-01-PLAN.md
+Last session: 2026-03-28T21:30:00.000Z
+Stopped at: Completed 02-04-PLAN.md
 Resume file: None
