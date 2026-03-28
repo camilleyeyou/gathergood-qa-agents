@@ -136,11 +136,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### API Tests — Public Pages
 
-- [ ] **TPUBL-01**: Test browse published events with search, category, format filters
-- [ ] **TPUBL-02**: Test only PUBLISHED and LIVE events appear (no DRAFT/CANCELLED)
-- [ ] **TPUBL-03**: Test view organization public page with upcoming events
-- [ ] **TPUBL-04**: Test view public event detail with PUBLIC ticket tiers only
-- [ ] **TPUBL-05**: Test HIDDEN and INVITE_ONLY tiers not shown publicly
+- [x] **TPUBL-01**: Test browse published events with search, category, format filters
+- [x] **TPUBL-02**: Test only PUBLISHED and LIVE events appear (no DRAFT/CANCELLED)
+- [x] **TPUBL-03**: Test view organization public page with upcoming events
+- [x] **TPUBL-04**: Test view public event detail with PUBLIC ticket tiers only
+- [x] **TPUBL-05**: Test HIDDEN and INVITE_ONLY tiers not shown publicly
 
 ### API Tests — Permission Boundaries
 
@@ -291,11 +291,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TANLT-01 | Phase 4 | Pending |
 | TANLT-02 | Phase 4 | Pending |
 | TANLT-03 | Phase 4 | Pending |
-| TPUBL-01 | Phase 4 | Pending |
-| TPUBL-02 | Phase 4 | Pending |
-| TPUBL-03 | Phase 4 | Pending |
-| TPUBL-04 | Phase 4 | Pending |
-| TPUBL-05 | Phase 4 | Pending |
+| TPUBL-01 | Phase 4 | Complete |
+| TPUBL-02 | Phase 4 | Complete |
+| TPUBL-03 | Phase 4 | Complete |
+| TPUBL-04 | Phase 4 | Complete |
+| TPUBL-05 | Phase 4 | Complete |
 | TFEND-01 | Phase 4 | Pending |
 | TFEND-02 | Phase 4 | Pending |
 | TFEND-03 | Phase 4 | Pending |

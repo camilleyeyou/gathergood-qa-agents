@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to plan
-stopped_at: Completed 03-03-PLAN.md
-last_updated: "2026-03-28T23:06:30.376Z"
+status: Ready to execute
+stopped_at: Completed 04-03-PLAN.md
+last_updated: "2026-03-28T23:44:19.753Z"
 progress:
   total_phases: 5
   completed_phases: 2
-  total_plans: 10
-  completed_plans: 8
+  total_plans: 15
+  completed_plans: 9
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fail results so the team knows the platform is ready to ship.
-**Current focus:** Phase 03 — checkout-orders-check-in
+**Current focus:** Phase 04 — permissions-analytics-browser-ui
 
 ## Current Position
 
-Phase: 4
-Plan: Not started
+Phase: 04 (permissions-analytics-browser-ui) — EXECUTING
+Plan: 2 of 5
 
 ## Performance Metrics
 
@@ -54,6 +54,7 @@ Plan: Not started
 | Phase 03-checkout-orders-check-in P01 | 7 | 2 tasks | 2 files |
 | Phase 03-checkout-orders-check-in P02 | 2 | 1 tasks | 1 files |
 | Phase 03-checkout-orders-check-in P03 | 15 | 2 tasks | 1 files |
+| Phase 04-permissions-analytics-browser-ui P03 | 13 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,8 @@ Recent decisions affecting current work:
 - [Phase 03-checkout-orders-check-in]: completed_order fixture is module-scoped to isolate order creation from checkout tests while sharing checkout_event
 - [Phase 03-checkout-orders-check-in]: TCHKN-01/02/03 use different tickets from 2-ticket order to avoid re-scan ordering dependency
 - [Phase 03-checkout-orders-check-in]: TMCHK-02 re-checks same ticket to verify already_checked_in shares status/message keys with QR scan
+- [Phase 04-permissions-analytics-browser-ui]: TPUBL-01: ?format= filter returns 404 on live API — test skips format filter
+- [Phase 04-permissions-analytics-browser-ui]: TPUBL-04/05: ticket_tiers visibility field stripped in public response — verified by tier name prefixes
 
 ### Pending Todos
 
@@ -95,6 +98,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T23:01:24.028Z
-Stopped at: Completed 03-03-PLAN.md
+Last session: 2026-03-28T23:44:19.748Z
+Stopped at: Completed 04-03-PLAN.md
 Resume file: None
