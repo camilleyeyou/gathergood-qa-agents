@@ -91,13 +91,13 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### API Tests — Orders & Tickets
 
-- [ ] **TORDR-01**: Test list own orders
-- [ ] **TORDR-02**: Test view order detail (must be order owner)
-- [ ] **TORDR-03**: Test lookup order by confirmation code (no auth)
-- [ ] **TORDR-04**: Test confirmation code is 10-char alphanumeric
-- [ ] **TORDR-05**: Test list own tickets
-- [ ] **TORDR-06**: Test QR code data format: {order_id}:{tier_id}:{ticket_id}:{hmac_16hex}
-- [ ] **TORDR-07**: Test HMAC computed over order_id:tier_id:ticket_id
+- [x] **TORDR-01**: Test list own orders
+- [x] **TORDR-02**: Test view order detail (must be order owner)
+- [x] **TORDR-03**: Test lookup order by confirmation code (no auth)
+- [x] **TORDR-04**: Test confirmation code is 10-char alphanumeric
+- [x] **TORDR-05**: Test list own tickets
+- [x] **TORDR-06**: Test QR code data format: {order_id}:{tier_id}:{ticket_id}:{hmac_16hex}
+- [x] **TORDR-07**: Test HMAC computed over order_id:tier_id:ticket_id
 
 ### API Tests — QR Check-In
 
@@ -259,13 +259,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TCHKT-10 | Phase 3 | Complete |
 | TCHKT-11 | Phase 3 | Complete |
 | TCHKT-12 | Phase 3 | Complete |
-| TORDR-01 | Phase 3 | Pending |
-| TORDR-02 | Phase 3 | Pending |
-| TORDR-03 | Phase 3 | Pending |
-| TORDR-04 | Phase 3 | Pending |
-| TORDR-05 | Phase 3 | Pending |
-| TORDR-06 | Phase 3 | Pending |
-| TORDR-07 | Phase 3 | Pending |
+| TORDR-01 | Phase 3 | Complete |
+| TORDR-02 | Phase 3 | Complete |
+| TORDR-03 | Phase 3 | Complete |
+| TORDR-04 | Phase 3 | Complete |
+| TORDR-05 | Phase 3 | Complete |
+| TORDR-06 | Phase 3 | Complete |
+| TORDR-07 | Phase 3 | Complete |
 | TCHKN-01 | Phase 3 | Pending |
 | TCHKN-02 | Phase 3 | Pending |
 | TCHKN-03 | Phase 3 | Pending |
