@@ -52,27 +52,27 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### API Tests — Events
 
-- [ ] **TEVNT-01**: Test create event with all fields (title, format, category, dates, venue, tags)
-- [ ] **TEVNT-02**: Test event defaults to DRAFT status on creation
-- [ ] **TEVNT-03**: Test event slug is auto-generated from title
-- [ ] **TEVNT-04**: Test publish DRAFT event (status → PUBLISHED)
-- [ ] **TEVNT-05**: Test cancel event from any status (status → CANCELLED)
-- [ ] **TEVNT-06**: Test cannot publish CANCELLED event (400)
-- [ ] **TEVNT-07**: Test cannot publish already-published event (400)
+- [x] **TEVNT-01**: Test create event with all fields (title, format, category, dates, venue, tags)
+- [x] **TEVNT-02**: Test event defaults to DRAFT status on creation
+- [x] **TEVNT-03**: Test event slug is auto-generated from title
+- [x] **TEVNT-04**: Test publish DRAFT event (status → PUBLISHED)
+- [x] **TEVNT-05**: Test cancel event from any status (status → CANCELLED)
+- [x] **TEVNT-06**: Test cannot publish CANCELLED event (400)
+- [x] **TEVNT-07**: Test cannot publish already-published event (400)
 
 ### API Tests — Ticket Tiers
 
-- [ ] **TTICK-01**: Test create ticket tier with all options (price, quantity, visibility, etc.)
-- [ ] **TTICK-02**: Test quantity_remaining is calculated correctly
-- [ ] **TTICK-03**: Test visibility options (PUBLIC, HIDDEN, INVITE_ONLY)
-- [ ] **TTICK-04**: Test soft-delete tier (is_active = false)
+- [x] **TTICK-01**: Test create ticket tier with all options (price, quantity, visibility, etc.)
+- [x] **TTICK-02**: Test quantity_remaining is calculated correctly
+- [x] **TTICK-03**: Test visibility options (PUBLIC, HIDDEN, INVITE_ONLY)
+- [x] **TTICK-04**: Test soft-delete tier (is_active = false)
 
 ### API Tests — Promo Codes
 
-- [ ] **TPRMO-01**: Test create promo code (PERCENTAGE and FIXED discount types)
-- [ ] **TPRMO-02**: Test promo code stored uppercase
-- [ ] **TPRMO-03**: Test empty applicable_tier_ids means code applies to ALL tiers
-- [ ] **TPRMO-04**: Test public endpoint validates promo code (active, not expired, under limit, tier match)
+- [x] **TPRMO-01**: Test create promo code (PERCENTAGE and FIXED discount types)
+- [x] **TPRMO-02**: Test promo code stored uppercase
+- [x] **TPRMO-03**: Test empty applicable_tier_ids means code applies to ALL tiers
+- [x] **TPRMO-04**: Test public endpoint validates promo code (active, not expired, under limit, tier match)
 
 ### API Tests — Checkout
 
@@ -232,21 +232,21 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TVENU-01 | Phase 2 | Pending |
 | TVENU-02 | Phase 2 | Pending |
 | TVENU-03 | Phase 2 | Pending |
-| TEVNT-01 | Phase 2 | Pending |
-| TEVNT-02 | Phase 2 | Pending |
-| TEVNT-03 | Phase 2 | Pending |
-| TEVNT-04 | Phase 2 | Pending |
-| TEVNT-05 | Phase 2 | Pending |
-| TEVNT-06 | Phase 2 | Pending |
-| TEVNT-07 | Phase 2 | Pending |
-| TTICK-01 | Phase 2 | Pending |
-| TTICK-02 | Phase 2 | Pending |
-| TTICK-03 | Phase 2 | Pending |
-| TTICK-04 | Phase 2 | Pending |
-| TPRMO-01 | Phase 2 | Pending |
-| TPRMO-02 | Phase 2 | Pending |
-| TPRMO-03 | Phase 2 | Pending |
-| TPRMO-04 | Phase 2 | Pending |
+| TEVNT-01 | Phase 2 | Complete |
+| TEVNT-02 | Phase 2 | Complete |
+| TEVNT-03 | Phase 2 | Complete |
+| TEVNT-04 | Phase 2 | Complete |
+| TEVNT-05 | Phase 2 | Complete |
+| TEVNT-06 | Phase 2 | Complete |
+| TEVNT-07 | Phase 2 | Complete |
+| TTICK-01 | Phase 2 | Complete |
+| TTICK-02 | Phase 2 | Complete |
+| TTICK-03 | Phase 2 | Complete |
+| TTICK-04 | Phase 2 | Complete |
+| TPRMO-01 | Phase 2 | Complete |
+| TPRMO-02 | Phase 2 | Complete |
+| TPRMO-03 | Phase 2 | Complete |
+| TPRMO-04 | Phase 2 | Complete |
 | TCHKT-01 | Phase 3 | Pending |
 | TCHKT-02 | Phase 3 | Pending |
 | TCHKT-03 | Phase 3 | Pending |

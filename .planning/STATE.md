@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Executing Phase 02
-stopped_at: Completed 02-04-PLAN.md
-last_updated: "2026-03-28T21:30:00.000Z"
+status: Phase complete — ready for verification
+stopped_at: Completed 02-05-PLAN.md
+last_updated: "2026-03-28T21:28:08.660Z"
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 7
-  completed_plans: 4
+  completed_plans: 5
 ---
 
 # Project State
@@ -50,6 +50,7 @@ Plan: 5 of 5
 | Phase 01-foundation P02 | 168 | 2 tasks | 5 files |
 | Phase 02-core-api-tests P01 | ~10 | 2 tasks | 3 files |
 | Phase 02-core-api-tests P04 | ~5 | 1 task | 1 file |
+| Phase 02-core-api-tests P05 | 21 | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,9 @@ Recent decisions affecting current work:
 - [Phase 02-core-api-tests 01]: Registry entries store dicts with parent slugs for nested URL routing (not bare IDs)
 - [Phase 02-core-api-tests 04]: _create_user_client() returns plain httpx.Client (not the auth_client wrapper) — secondary users don't need JWT auto-refresh for short-lived permission tests
 - [Phase 02-core-api-tests 04]: TTEAM-04 fetches membership_id via OWNER client GET /members/ — membership ID (not user UUID) used for DELETE
+- [Phase 02-core-api-tests]: Each status-transition test creates its own event via _create_minimal_event() helper to avoid ordering dependencies
+- [Phase 02-core-api-tests]: TPRMO-04 invalid check accepts both valid=False and 4xx status codes since live API may return either for deactivated/wrong-tier promos
+- [Phase 02-core-api-tests]: Usage limit exhaustion deferred to Phase 3 checkout — usage_limit=0 does not mean exhausted (RESEARCH.md Pitfall 8)
 
 ### Pending Todos
 
@@ -83,6 +87,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T21:30:00.000Z
-Stopped at: Completed 02-04-PLAN.md
+Last session: 2026-03-28T21:28:08.654Z
+Stopped at: Completed 02-05-PLAN.md
 Resume file: None

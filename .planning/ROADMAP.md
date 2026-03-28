@@ -52,7 +52,7 @@ Plans:
 - [ ] 02-02-PLAN.md — Auth and profile API tests (TAUTH-01 to TAUTH-05, TPROF-01, TPROF-02)
 - [ ] 02-03-PLAN.md — Organization and venue API tests (TORG-01 to TORG-04, TVENU-01 to TVENU-03)
 - [x] 02-04-PLAN.md — Team management API tests (TTEAM-01 to TTEAM-04)
-- [ ] 02-05-PLAN.md — Event, ticket tier, and promo code API tests (TEVNT-01 to TEVNT-07, TTICK-01 to TTICK-04, TPRMO-01 to TPRMO-04)
+- [x] 02-05-PLAN.md — Event, ticket tier, and promo code API tests (TEVNT-01 to TEVNT-07, TTICK-01 to TTICK-04, TPRMO-01 to TPRMO-04)
 
 ### Phase 3: Checkout, Orders & Check-In
 **Goal**: Checkout, order, and check-in flows are fully tested with Stripe live-mode damage prevention in place
