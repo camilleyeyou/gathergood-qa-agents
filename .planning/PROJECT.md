@@ -17,14 +17,20 @@ Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fai
 - Unique test data factories (uuid4 prefixes) for live DB isolation — Phase 1
 - Teardown registry for test cleanup — Phase 1
 - @pytest.mark.req markers linking tests to TEST_SPEC IDs — Phase 1
+- Auth API tests (register, login, token refresh, password reset) — Phase 2
+- Profile API tests (view, update) — Phase 2
+- Organization API tests (create, list, update, slug dedup) — Phase 2
+- Team management API tests (invite, roles, listing, removal) — Phase 2
+- Venue API tests (create, list, update) — Phase 2
+- Event lifecycle API tests (create, publish, cancel, invalid transitions) — Phase 2
+- Ticket tier API tests (create, quantity, visibility, soft-delete) — Phase 2
+- Promo code API tests (create, uppercase, tier applicability, validation) — Phase 2
+- Teardown cleanup wired with 4-step reverse-dependency deletion — Phase 2
 
 ### Active
 
-- [ ] API test suite covering all backend endpoints from TEST_SPEC.md
 - [ ] Browser automation tests covering all frontend UI flows from TEST_SPEC.md
 - [ ] Full 10-phase integration sequence runs end-to-end autonomously
-- [ ] JWT authentication flow (register, login, token refresh) tested
-- [ ] Organization and team management flows tested
 - [ ] Event lifecycle (DRAFT → PUBLISHED → LIVE → COMPLETED, cancel) tested
 - [ ] Free checkout flow tested (calculate, complete, tickets with QR)
 - [ ] Paid checkout flow tested (Stripe PaymentIntent)
@@ -111,4 +117,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-28 after Phase 1 completion*
+*Last updated: 2026-03-28 after Phase 2 completion*
