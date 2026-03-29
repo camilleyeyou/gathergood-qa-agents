@@ -29,14 +29,15 @@ Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fai
 - Checkout API tests (calculate, free complete, quantity/promo validation) — Phase 3
 - Order & ticket API tests (list, detail, confirmation code, QR format, HMAC) — Phase 3
 - QR check-in API tests (scan, re-scan, invalid, manual, stats, search) — Phase 3
+- Permission boundary tests (VOLUNTEER/MANAGER/non-member restrictions) — Phase 4
+- Guest list and CSV export tests — Phase 4
+- Email settings tests (config, bulk send, log) — Phase 4
+- Event analytics tests (revenue, per-tier, timeline) — Phase 4
+- Public pages tests (browse, org page, event detail, tier visibility) — Phase 4
+- Playwright browser tests (homepage, navbar, responsive, touch targets, checkout flow, confirmation, check-in page) — Phase 4
 
 ### Active
 
-- [ ] Browser automation tests covering all frontend UI flows from TEST_SPEC.md
-- [ ] Full 10-phase integration sequence runs end-to-end autonomously
-- [ ] Guest list, analytics, and email settings tested
-- [ ] Permission boundaries tested (OWNER > MANAGER > VOLUNTEER)
-- [ ] Frontend UI checklist tested (navigation, responsive design, checkout steps)
 - [ ] Clear test report with pass/fail per test case
 - [ ] Tests can run locally via CLI command
 
@@ -115,4 +116,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-28 after Phase 3 completion*
+*Last updated: 2026-03-29 after Phase 4 completion*
