@@ -35,11 +35,13 @@ Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fai
 - Event analytics tests (revenue, per-tier, timeline) — Phase 4
 - Public pages tests (browse, org page, event detail, tier visibility) — Phase 4
 - Playwright browser tests (homepage, navbar, responsive, touch targets, checkout flow, confirmation, check-in page) — Phase 4
+- HTML report with requirement ID coverage table (pass/fail/skip per req) — Phase 5
+- Screenshot and Playwright trace capture for failed browser tests — Phase 5
+- Idempotent test runs via RUN_ID isolation — Phase 5
 
 ### Active
 
-- [ ] Clear test report with pass/fail per test case
-- [ ] Tests can run locally via CLI command
+All v1 requirements have been implemented.
 
 ### Out of Scope
 
@@ -116,4 +118,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-29 after Phase 4 completion*
+*Last updated: 2026-03-29 after Phase 5 completion — all phases complete*
