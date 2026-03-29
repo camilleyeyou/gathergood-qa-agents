@@ -99,7 +99,10 @@ Plans:
   1. The HTML report lists every TEST_SPEC requirement ID with a PASS, FAIL, or SKIP status and includes total counts and pass percentage
   2. Failed browser tests include a screenshot and Playwright trace file attached to the report entry
   3. Running the full suite twice in sequence produces identical results — no test fails on second run due to leftover data from the first
-**Plans**: TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 05-01-PLAN.md — HTML report plugin with requirement ID coverage, screenshot/trace capture, and idempotency verification
 
 ## Progress
 
@@ -112,4 +115,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Core API Tests | 2/5 | In progress | - |
 | 3. Checkout, Orders & Check-In | 3/3 | Complete   | 2026-03-28 |
 | 4. Permissions, Analytics & Browser UI | 5/5 | Complete   | 2026-03-29 |
-| 5. Edge Cases & Reporting | 0/TBD | Not started | - |
+| 5. Edge Cases & Reporting | 0/1 | Not started | - |
