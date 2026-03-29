@@ -179,7 +179,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **AIQA-06**: Agent tests checkout flow — browse events, select tickets, complete free checkout, view confirmation
 - [x] **AIQA-07**: Agent tests check-in flow — navigate to check-in page, verify scanner/search/stats UI
 - [x] **AIQA-08**: Agent tests permission boundaries — login as different roles, verify restricted actions are blocked
-- [ ] **AIQA-09**: Natural language test report with agent observations, verdicts (PASS/FAIL/INCONCLUSIVE), and screenshots
+- [x] **AIQA-09**: Natural language test report with agent observations, verdicts (PASS/FAIL/INCONCLUSIVE), and screenshots
 - [x] **AIQA-10**: CLI runner to execute all AI agent scenarios with configurable max steps and cost limits
 - [x] **AIQA-11**: Environment config for ANTHROPIC_API_KEY via .env
 - [x] **AIQA-12**: Agent scenarios runnable via `pytest tests/ai/` alongside existing test suite
@@ -333,7 +333,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AIQA-06 | Phase 6 | Complete |
 | AIQA-07 | Phase 6 | Complete |
 | AIQA-08 | Phase 6 | Complete |
-| AIQA-09 | Phase 6 | Pending |
+| AIQA-09 | Phase 6 | Complete |
 | AIQA-10 | Phase 6 | Complete |
 | AIQA-11 | Phase 6 | Complete |
 | AIQA-12 | Phase 6 | Complete |
