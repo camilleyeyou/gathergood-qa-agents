@@ -173,12 +173,12 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **AIQA-01**: Core browser agent framework using Claude Computer Use API with Playwright backend
 - [x] **AIQA-02**: Agent takes screenshots, sends to Claude Sonnet, executes returned actions (click, type, scroll, key)
-- [ ] **AIQA-03**: Configurable test scenarios derived from TEST_SPEC domains (auth, events, checkout, check-in, etc.)
-- [ ] **AIQA-04**: Agent tests authentication flow — register, login, verify dashboard access
-- [ ] **AIQA-05**: Agent tests event management — create org, create event, publish, view public page
-- [ ] **AIQA-06**: Agent tests checkout flow — browse events, select tickets, complete free checkout, view confirmation
-- [ ] **AIQA-07**: Agent tests check-in flow — navigate to check-in page, verify scanner/search/stats UI
-- [ ] **AIQA-08**: Agent tests permission boundaries — login as different roles, verify restricted actions are blocked
+- [x] **AIQA-03**: Configurable test scenarios derived from TEST_SPEC domains (auth, events, checkout, check-in, etc.)
+- [x] **AIQA-04**: Agent tests authentication flow — register, login, verify dashboard access
+- [x] **AIQA-05**: Agent tests event management — create org, create event, publish, view public page
+- [x] **AIQA-06**: Agent tests checkout flow — browse events, select tickets, complete free checkout, view confirmation
+- [x] **AIQA-07**: Agent tests check-in flow — navigate to check-in page, verify scanner/search/stats UI
+- [x] **AIQA-08**: Agent tests permission boundaries — login as different roles, verify restricted actions are blocked
 - [ ] **AIQA-09**: Natural language test report with agent observations, verdicts (PASS/FAIL/INCONCLUSIVE), and screenshots
 - [x] **AIQA-10**: CLI runner to execute all AI agent scenarios with configurable max steps and cost limits
 - [x] **AIQA-11**: Environment config for ANTHROPIC_API_KEY via .env
@@ -327,12 +327,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | AIQA-01 | Phase 6 | Complete |
 | AIQA-02 | Phase 6 | Complete |
-| AIQA-03 | Phase 6 | Pending |
-| AIQA-04 | Phase 6 | Pending |
-| AIQA-05 | Phase 6 | Pending |
-| AIQA-06 | Phase 6 | Pending |
-| AIQA-07 | Phase 6 | Pending |
-| AIQA-08 | Phase 6 | Pending |
+| AIQA-03 | Phase 6 | Complete |
+| AIQA-04 | Phase 6 | Complete |
+| AIQA-05 | Phase 6 | Complete |
+| AIQA-06 | Phase 6 | Complete |
+| AIQA-07 | Phase 6 | Complete |
+| AIQA-08 | Phase 6 | Complete |
 | AIQA-09 | Phase 6 | Pending |
 | AIQA-10 | Phase 6 | Complete |
 | AIQA-11 | Phase 6 | Complete |
