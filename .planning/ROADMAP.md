@@ -118,7 +118,7 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — Agent framework: anthropic SDK, PlaywrightComputerBackend, agent loop, pytest fixtures, env config
+- [x] 06-01-PLAN.md — Agent framework: anthropic SDK, PlaywrightComputerBackend, agent loop, pytest fixtures, env config
 - [ ] 06-02-PLAN.md — Agent test scenarios: auth, event management, checkout, check-in, permissions
 - [ ] 06-03-PLAN.md — Report integration: natural language verdicts, token usage, and HTML report extras
 

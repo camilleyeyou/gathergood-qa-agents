@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Milestone complete
-stopped_at: Completed 05-01-PLAN.md
-last_updated: "2026-03-29T00:47:52.775Z"
+status: Ready to execute
+stopped_at: Completed 06-01-PLAN.md
+last_updated: "2026-03-29T06:15:14.522Z"
 progress:
-  total_phases: 5
+  total_phases: 6
   completed_phases: 4
-  total_plans: 16
-  completed_plans: 14
+  total_plans: 19
+  completed_plans: 15
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fail results so the team knows the platform is ready to ship.
-**Current focus:** Phase 05 — edge-cases-reporting
+**Current focus:** Phase 06 — ai-qa-agents
 
 ## Current Position
 
-Phase: 05
-Plan: Not started
+Phase: 06 (ai-qa-agents) — EXECUTING
+Plan: 2 of 3
 
 ## Performance Metrics
 
@@ -60,6 +60,7 @@ Plan: Not started
 | Phase 04-permissions-analytics-browser-ui P04 | 10 | 2 tasks | 2 files |
 | Phase 04-permissions-analytics-browser-ui P05 | 13 | 2 tasks | 2 files |
 | Phase 05-edge-cases-reporting P01 | 2 | 2 tasks | 3 files |
+| Phase 06-ai-qa-agents P01 | 3 | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -103,6 +104,7 @@ Recent decisions affecting current work:
 - [Phase 04-permissions-analytics-browser-ui]: UI tests use module-scoped fixtures to isolate UI test data from session-scoped API test suite resources
 - [Phase 05-edge-cases-reporting]: Always save Playwright traces (not just on failure) — simpler fixture, conftest_report.py selectively attaches for failures only
 - [Phase 05-edge-cases-reporting]: Use optionalhook=True for pytest_html_results_summary to avoid import errors when pytest-html not installed
+- [Phase 06-ai-qa-agents]: anthropic 0.86.0 with computer_20251124 tool type and 1M-token cost cap per scenario
 
 ### Pending Todos
 
@@ -116,6 +118,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-29T00:25:28.921Z
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-03-29T06:15:14.517Z
+Stopped at: Completed 06-01-PLAN.md
 Resume file: None

@@ -169,6 +169,21 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **TRPT-02**: Report includes total pass/fail/skip counts and percentage
 - [x] **TRPT-03**: Failed tests include error details and screenshots (browser tests)
 
+### AI QA Agents — Computer Use
+
+- [x] **AIQA-01**: Core browser agent framework using Claude Computer Use API with Playwright backend
+- [x] **AIQA-02**: Agent takes screenshots, sends to Claude Sonnet, executes returned actions (click, type, scroll, key)
+- [ ] **AIQA-03**: Configurable test scenarios derived from TEST_SPEC domains (auth, events, checkout, check-in, etc.)
+- [ ] **AIQA-04**: Agent tests authentication flow — register, login, verify dashboard access
+- [ ] **AIQA-05**: Agent tests event management — create org, create event, publish, view public page
+- [ ] **AIQA-06**: Agent tests checkout flow — browse events, select tickets, complete free checkout, view confirmation
+- [ ] **AIQA-07**: Agent tests check-in flow — navigate to check-in page, verify scanner/search/stats UI
+- [ ] **AIQA-08**: Agent tests permission boundaries — login as different roles, verify restricted actions are blocked
+- [ ] **AIQA-09**: Natural language test report with agent observations, verdicts (PASS/FAIL/INCONCLUSIVE), and screenshots
+- [x] **AIQA-10**: CLI runner to execute all AI agent scenarios with configurable max steps and cost limits
+- [x] **AIQA-11**: Environment config for ANTHROPIC_API_KEY via .env
+- [x] **AIQA-12**: Agent scenarios runnable via `pytest tests/ai/` alongside existing test suite
+
 ## v2 Requirements
 
 Deferred to future release. Tracked but not in current roadmap.
@@ -310,9 +325,22 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TRPT-02 | Phase 5 | Complete |
 | TRPT-03 | Phase 5 | Complete |
 
+| AIQA-01 | Phase 6 | Complete |
+| AIQA-02 | Phase 6 | Complete |
+| AIQA-03 | Phase 6 | Pending |
+| AIQA-04 | Phase 6 | Pending |
+| AIQA-05 | Phase 6 | Pending |
+| AIQA-06 | Phase 6 | Pending |
+| AIQA-07 | Phase 6 | Pending |
+| AIQA-08 | Phase 6 | Pending |
+| AIQA-09 | Phase 6 | Pending |
+| AIQA-10 | Phase 6 | Complete |
+| AIQA-11 | Phase 6 | Complete |
+| AIQA-12 | Phase 6 | Complete |
+
 **Coverage:**
-- v1 requirements: 88 total
-- Mapped to phases: 88
+- v1 requirements: 100 total
+- Mapped to phases: 100
 - Unmapped: 0
 
 ---
