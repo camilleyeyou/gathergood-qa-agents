@@ -16,7 +16,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 2: Core API Tests** - API test coverage for auth, profiles, orgs, teams, venues, events, ticket tiers, and promo codes
 - [x] **Phase 3: Checkout, Orders & Check-In** - Payment-sensitive checkout tests with Stripe gating, order verification, and QR/manual check-in (completed 2026-03-28)
 - [x] **Phase 4: Permissions, Analytics & Browser UI** - Permission boundary matrix, guest list, email, analytics, public pages, and all Playwright browser tests (completed 2026-03-29)
-- [ ] **Phase 5: Edge Cases & Reporting** - Edge case coverage, status transition guards, idempotency verification, and HTML report completeness
+- [x] **Phase 5: Edge Cases & Reporting** - Edge case coverage, status transition guards, idempotency verification, and HTML report completeness (completed 2026-03-29)
+- [ ] **Phase 6: AI QA Agents** - Claude Computer Use powered browser agents that test the site like human QA testers
 
 ## Phase Details
 
@@ -104,10 +105,27 @@ Plans:
 Plans:
 - [x] 05-01-PLAN.md — HTML report plugin with requirement ID coverage, screenshot/trace capture, and idempotency verification
 
+### Phase 6: AI QA Agents
+**Goal**: Claude Computer Use powered browser agents test the live GatherGood site like human QA testers, layered on top of the existing deterministic test suite
+**Depends on**: Phase 5
+**Requirements**: AIQA-01, AIQA-02, AIQA-03, AIQA-04, AIQA-05, AIQA-06, AIQA-07, AIQA-08, AIQA-09, AIQA-10, AIQA-11, AIQA-12
+**Success Criteria** (what must be TRUE):
+  1. The agent framework takes a screenshot, sends it to Claude Sonnet via Computer Use API, executes the returned browser action, and loops until Claude signals completion or the iteration cap (20 steps) is hit
+  2. Running `pytest tests/ai_agents/` executes all AI agent scenarios with `@pytest.mark.req` markers and produces PASS/FAIL/INCONCLUSIVE verdicts in the HTML report
+  3. Agent scenarios cover auth flow, event management, checkout, check-in, and permission boundaries — each producing a natural language observation alongside the verdict
+  4. The `ANTHROPIC_API_KEY` is loaded via pydantic-settings and agent tests skip cleanly with an explicit message when the key is not configured
+  5. Each scenario respects MAX_ITERATIONS=20 to prevent runaway API costs, and logs step count and token usage
+**Plans:** 3 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Agent framework: anthropic SDK, PlaywrightComputerBackend, agent loop, pytest fixtures, env config
+- [ ] 06-02-PLAN.md — Agent test scenarios: auth, event management, checkout, check-in, permissions
+- [ ] 06-03-PLAN.md — Report integration: natural language verdicts, token usage, and HTML report extras
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -115,4 +133,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Core API Tests | 2/5 | In progress | - |
 | 3. Checkout, Orders & Check-In | 3/3 | Complete   | 2026-03-28 |
 | 4. Permissions, Analytics & Browser UI | 5/5 | Complete   | 2026-03-29 |
-| 5. Edge Cases & Reporting | 0/1 | Not started | - |
+| 5. Edge Cases & Reporting | 1/1 | Complete   | 2026-03-29 |
+| 6. AI QA Agents | 0/3 | Not started | - |
