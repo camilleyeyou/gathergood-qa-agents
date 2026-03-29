@@ -112,7 +112,7 @@ def _create_event_with_checkout():
 
 @pytest.mark.req("AIQA-07")
 @pytest.mark.ai_agent
-def test_checkin_page_agent(agent_backend, claude_client, base_url, agent_system_prompt):
+def test_checkin_page_agent(agent_backend, claude_client, base_url, agent_system_prompt, record_agent_result):
     """AI agent verifies the check-in page has scanner, search, and stats."""
     data = _create_event_with_checkout()
 
@@ -141,6 +141,7 @@ def test_checkin_page_agent(agent_backend, claude_client, base_url, agent_system
         system_prompt=agent_system_prompt,
         max_iterations=18,
     )
+    record_agent_result(result)
 
     assert result["verdict"] != "FAIL", (
         f"Agent reported FAIL after {result['steps']} steps.\n"

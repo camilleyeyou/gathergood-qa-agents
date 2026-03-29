@@ -170,7 +170,7 @@ def _create_org_with_non_member():
 @pytest.mark.req("AIQA-08")
 @pytest.mark.ai_agent
 def test_permission_boundary_volunteer_agent(
-    agent_backend, claude_client, base_url, agent_system_prompt
+    agent_backend, claude_client, base_url, agent_system_prompt, record_agent_result
 ):
     """AI agent verifies volunteer role restrictions on org dashboard."""
     data = _create_org_with_volunteer()
@@ -197,6 +197,7 @@ def test_permission_boundary_volunteer_agent(
         system_prompt=agent_system_prompt,
         max_iterations=18,
     )
+    record_agent_result(result)
 
     assert result["verdict"] != "FAIL", (
         f"Agent reported FAIL after {result['steps']} steps.\n"
@@ -207,7 +208,7 @@ def test_permission_boundary_volunteer_agent(
 @pytest.mark.req("AIQA-08")
 @pytest.mark.ai_agent
 def test_permission_boundary_non_member_agent(
-    agent_backend, claude_client, base_url, agent_system_prompt
+    agent_backend, claude_client, base_url, agent_system_prompt, record_agent_result
 ):
     """AI agent verifies non-members cannot access org management."""
     data = _create_org_with_non_member()
@@ -233,6 +234,7 @@ def test_permission_boundary_non_member_agent(
         system_prompt=agent_system_prompt,
         max_iterations=15,
     )
+    record_agent_result(result)
 
     assert result["verdict"] != "FAIL", (
         f"Agent reported FAIL after {result['steps']} steps.\n"

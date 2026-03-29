@@ -12,7 +12,7 @@ _settings = Settings()
 
 @pytest.mark.req("AIQA-04")
 @pytest.mark.ai_agent
-def test_auth_login_page_agent(agent_backend, claude_client, base_url, agent_system_prompt):
+def test_auth_login_page_agent(agent_backend, claude_client, base_url, agent_system_prompt, record_agent_result):
     """AI agent verifies login page has all expected form elements."""
     agent_backend.page.goto(f"{base_url}/login", timeout=60000)
     agent_backend.page.wait_for_load_state("networkidle")
@@ -31,6 +31,7 @@ def test_auth_login_page_agent(agent_backend, claude_client, base_url, agent_sys
         system_prompt=agent_system_prompt,
         max_iterations=10,
     )
+    record_agent_result(result)
 
     assert result["verdict"] != "FAIL", (
         f"Agent reported FAIL after {result['steps']} steps.\n"
@@ -40,7 +41,7 @@ def test_auth_login_page_agent(agent_backend, claude_client, base_url, agent_sys
 
 @pytest.mark.req("AIQA-04")
 @pytest.mark.ai_agent
-def test_auth_register_page_agent(agent_backend, claude_client, base_url, agent_system_prompt):
+def test_auth_register_page_agent(agent_backend, claude_client, base_url, agent_system_prompt, record_agent_result):
     """AI agent verifies registration page has all expected form elements."""
     agent_backend.page.goto(f"{base_url}/register", timeout=60000)
     agent_backend.page.wait_for_load_state("networkidle")
@@ -58,6 +59,7 @@ def test_auth_register_page_agent(agent_backend, claude_client, base_url, agent_
         system_prompt=agent_system_prompt,
         max_iterations=10,
     )
+    record_agent_result(result)
 
     assert result["verdict"] != "FAIL", (
         f"Agent reported FAIL after {result['steps']} steps.\n"
@@ -67,7 +69,7 @@ def test_auth_register_page_agent(agent_backend, claude_client, base_url, agent_
 
 @pytest.mark.req("AIQA-04")
 @pytest.mark.ai_agent
-def test_auth_login_flow_agent(agent_backend, claude_client, base_url, agent_system_prompt):
+def test_auth_login_flow_agent(agent_backend, claude_client, base_url, agent_system_prompt, record_agent_result):
     """AI agent performs a full login flow with a real test user."""
     # Create a test user via API before agent runs
     email = unique_email()
@@ -105,6 +107,7 @@ def test_auth_login_flow_agent(agent_backend, claude_client, base_url, agent_sys
         system_prompt=agent_system_prompt,
         max_iterations=15,
     )
+    record_agent_result(result)
 
     assert result["verdict"] != "FAIL", (
         f"Agent reported FAIL after {result['steps']} steps.\n"

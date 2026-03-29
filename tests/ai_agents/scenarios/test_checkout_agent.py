@@ -103,7 +103,7 @@ def _create_event_with_free_tier():
 
 @pytest.mark.req("AIQA-06")
 @pytest.mark.ai_agent
-def test_checkout_flow_agent(agent_backend, claude_client, base_url, agent_system_prompt):
+def test_checkout_flow_agent(agent_backend, claude_client, base_url, agent_system_prompt, record_agent_result):
     """AI agent completes a full free checkout flow end-to-end."""
     data = _create_event_with_free_tier()
 
@@ -135,6 +135,7 @@ def test_checkout_flow_agent(agent_backend, claude_client, base_url, agent_syste
         system_prompt=agent_system_prompt,
         max_iterations=20,
     )
+    record_agent_result(result)
 
     assert result["verdict"] != "FAIL", (
         f"Agent reported FAIL after {result['steps']} steps.\n"
@@ -144,7 +145,7 @@ def test_checkout_flow_agent(agent_backend, claude_client, base_url, agent_syste
 
 @pytest.mark.req("AIQA-06")
 @pytest.mark.ai_agent
-def test_checkout_page_structure_agent(agent_backend, claude_client, base_url, agent_system_prompt):
+def test_checkout_page_structure_agent(agent_backend, claude_client, base_url, agent_system_prompt, record_agent_result):
     """AI agent verifies checkout page structure (steps, ticket selection)."""
     data = _create_event_with_free_tier()
 
@@ -170,6 +171,7 @@ def test_checkout_page_structure_agent(agent_backend, claude_client, base_url, a
         system_prompt=agent_system_prompt,
         max_iterations=15,
     )
+    record_agent_result(result)
 
     assert result["verdict"] != "FAIL", (
         f"Agent reported FAIL after {result['steps']} steps.\n"

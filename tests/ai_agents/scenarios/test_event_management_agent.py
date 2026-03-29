@@ -101,7 +101,7 @@ def _create_published_event():
 
 @pytest.mark.req("AIQA-05")
 @pytest.mark.ai_agent
-def test_event_public_page_agent(agent_backend, claude_client, base_url, agent_system_prompt):
+def test_event_public_page_agent(agent_backend, claude_client, base_url, agent_system_prompt, record_agent_result):
     """AI agent browses public events and views an event detail page."""
     data = _create_published_event()
     # Use a unique substring from the title for searching
@@ -126,6 +126,7 @@ def test_event_public_page_agent(agent_backend, claude_client, base_url, agent_s
         system_prompt=agent_system_prompt,
         max_iterations=15,
     )
+    record_agent_result(result)
 
     assert result["verdict"] != "FAIL", (
         f"Agent reported FAIL after {result['steps']} steps.\n"
@@ -135,7 +136,7 @@ def test_event_public_page_agent(agent_backend, claude_client, base_url, agent_s
 
 @pytest.mark.req("AIQA-05")
 @pytest.mark.ai_agent
-def test_event_dashboard_agent(agent_backend, claude_client, base_url, agent_system_prompt):
+def test_event_dashboard_agent(agent_backend, claude_client, base_url, agent_system_prompt, record_agent_result):
     """AI agent logs in and verifies the event management dashboard."""
     data = _create_published_event()
 
@@ -158,6 +159,7 @@ def test_event_dashboard_agent(agent_backend, claude_client, base_url, agent_sys
         system_prompt=agent_system_prompt,
         max_iterations=18,
     )
+    record_agent_result(result)
 
     assert result["verdict"] != "FAIL", (
         f"Agent reported FAIL after {result['steps']} steps.\n"
