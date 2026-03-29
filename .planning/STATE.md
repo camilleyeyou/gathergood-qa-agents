@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to execute
-stopped_at: Completed 04-04-PLAN.md
-last_updated: "2026-03-28T23:49:32.416Z"
+status: Phase complete — ready for verification
+stopped_at: Completed 04-05-PLAN.md
+last_updated: "2026-03-29T00:06:12.171Z"
 progress:
   total_phases: 5
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 15
-  completed_plans: 12
+  completed_plans: 13
 ---
 
 # Project State
@@ -58,6 +58,7 @@ Plan: 5 of 5
 | Phase 04-permissions-analytics-browser-ui P01 | 7 | 1 tasks | 1 files |
 | Phase 04 P02 | 14 | 2 tasks | 2 files |
 | Phase 04-permissions-analytics-browser-ui P04 | 10 | 2 tasks | 2 files |
+| Phase 04-permissions-analytics-browser-ui P05 | 13 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -95,6 +96,10 @@ Recent decisions affecting current work:
 - [Phase 04]: analytics_timeline_key: analytics uses 'timeline' key not 'registrations_over_time' as TEST_SPEC suggests
 - [Phase 04-permissions-analytics-browser-ui]: Use get_by_role link locator instead of get_by_text to avoid strict-mode violations with duplicate nav text in live site
 - [Phase 04-permissions-analytics-browser-ui]: Set page.goto timeout=60s for live Vercel cold-start latency resilience
+- [Phase 04-permissions-analytics-browser-ui]: Checkout step labels differ from RESEARCH.md: live site uses '1. Select Tickets' and '4. Confirmation' — tests updated to match live site
+- [Phase 04-permissions-analytics-browser-ui]: Confirmation page requires full browser checkout flow (React context state) — direct URL navigation shows 'No checkout data found.'
+- [Phase 04-permissions-analytics-browser-ui]: TFEND-04 checkout page requires login — unauthenticated navigation shows 'Could not load event.' error
+- [Phase 04-permissions-analytics-browser-ui]: UI tests use module-scoped fixtures to isolate UI test data from session-scoped API test suite resources
 
 ### Pending Todos
 
@@ -108,6 +113,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T23:49:32.411Z
-Stopped at: Completed 04-04-PLAN.md
+Last session: 2026-03-29T00:06:12.166Z
+Stopped at: Completed 04-05-PLAN.md
 Resume file: None

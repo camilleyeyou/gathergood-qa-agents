@@ -155,13 +155,13 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **TFEND-01**: Test homepage displays hero section, feature cards, and auth-aware CTAs
 - [x] **TFEND-02**: Test navbar shows login/signup when logged out; dashboard links when logged in
 - [x] **TFEND-03**: Test mobile hamburger menu with all nav links
-- [ ] **TFEND-04**: Test checkout flow has step indicators with current step highlighted
-- [ ] **TFEND-05**: Test checkout pre-fills billing info for logged-in users
-- [ ] **TFEND-06**: Test confirmation page shows confirmation code and QR codes
+- [x] **TFEND-04**: Test checkout flow has step indicators with current step highlighted
+- [x] **TFEND-05**: Test checkout pre-fills billing info for logged-in users
+- [x] **TFEND-06**: Test confirmation page shows confirmation code and QR codes
 - [x] **TFEND-07**: Test all pages responsive at 375px, 768px, and 1280px+
 - [x] **TFEND-08**: Test touch targets at least 44x44px on mobile
 - [x] **TFEND-09**: Test no horizontal overflow on any screen size
-- [ ] **TFEND-10**: Test check-in page has scanner, search, manual check-in, and live stats
+- [x] **TFEND-10**: Test check-in page has scanner, search, manual check-in, and live stats
 
 ### Reporting
 
@@ -299,13 +299,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TFEND-01 | Phase 4 | Complete |
 | TFEND-02 | Phase 4 | Complete |
 | TFEND-03 | Phase 4 | Complete |
-| TFEND-04 | Phase 4 | Pending |
-| TFEND-05 | Phase 4 | Pending |
-| TFEND-06 | Phase 4 | Pending |
+| TFEND-04 | Phase 4 | Complete |
+| TFEND-05 | Phase 4 | Complete |
+| TFEND-06 | Phase 4 | Complete |
 | TFEND-07 | Phase 4 | Complete |
 | TFEND-08 | Phase 4 | Complete |
 | TFEND-09 | Phase 4 | Complete |
-| TFEND-10 | Phase 4 | Pending |
+| TFEND-10 | Phase 4 | Complete |
 | TRPT-01 | Phase 5 | Pending |
 | TRPT-02 | Phase 5 | Pending |
 | TRPT-03 | Phase 5 | Pending |

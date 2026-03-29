@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - Project scaffold, auth fixture, data factories, teardown harness, and CLI entry point (completed 2026-03-28)
 - [ ] **Phase 2: Core API Tests** - API test coverage for auth, profiles, orgs, teams, venues, events, ticket tiers, and promo codes
 - [x] **Phase 3: Checkout, Orders & Check-In** - Payment-sensitive checkout tests with Stripe gating, order verification, and QR/manual check-in (completed 2026-03-28)
-- [ ] **Phase 4: Permissions, Analytics & Browser UI** - Permission boundary matrix, guest list, email, analytics, public pages, and all Playwright browser tests
+- [x] **Phase 4: Permissions, Analytics & Browser UI** - Permission boundary matrix, guest list, email, analytics, public pages, and all Playwright browser tests (completed 2026-03-29)
 - [ ] **Phase 5: Edge Cases & Reporting** - Edge case coverage, status transition guards, idempotency verification, and HTML report completeness
 
 ## Phase Details
@@ -82,14 +82,14 @@ Plans:
   4. Public browse shows only PUBLISHED and LIVE events; HIDDEN and INVITE_ONLY tiers are absent from public event detail
   5. Playwright browser tests verify responsive layout at 375px, 768px, and 1280px, the checkout step indicator, and the check-in page scanner/search/stats UI
 **UI hint**: yes
-**Plans:** 4/5 plans executed
+**Plans:** 5/5 plans complete
 
 Plans:
 - [x] 04-01-PLAN.md — Permission boundary tests for VOLUNTEER, MANAGER, and non-member roles (TPERM-01 to TPERM-05)
 - [x] 04-02-PLAN.md — Guest list, email settings, and analytics API tests (TGUST-01/02, TEMAL-01 to TEMAL-04, TANLT-01 to TANLT-03)
 - [x] 04-03-PLAN.md — Public browse, org page, and event detail with tier visibility filtering (TPUBL-01 to TPUBL-05)
 - [x] 04-04-PLAN.md — Playwright setup and homepage, navbar, responsive, touch target browser tests (TFEND-01/02/03/07/08/09)
-- [ ] 04-05-PLAN.md — Checkout flow, confirmation, and check-in page browser tests (TFEND-04/05/06/10)
+- [x] 04-05-PLAN.md — Checkout flow, confirmation, and check-in page browser tests (TFEND-04/05/06/10)
 
 ### Phase 5: Edge Cases & Reporting
 **Goal**: The suite handles known failure modes cleanly and produces a human-readable HTML report with 100% requirement ID coverage
@@ -111,5 +111,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Foundation | 2/2 | Complete   | 2026-03-28 |
 | 2. Core API Tests | 2/5 | In progress | - |
 | 3. Checkout, Orders & Check-In | 3/3 | Complete   | 2026-03-28 |
-| 4. Permissions, Analytics & Browser UI | 4/5 | In Progress|  |
+| 4. Permissions, Analytics & Browser UI | 5/5 | Complete   | 2026-03-29 |
 | 5. Edge Cases & Reporting | 0/TBD | Not started | - |
