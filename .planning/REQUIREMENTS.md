@@ -165,9 +165,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Reporting
 
-- [ ] **TRPT-01**: Test run produces HTML report with pass/fail per requirement ID
-- [ ] **TRPT-02**: Report includes total pass/fail/skip counts and percentage
-- [ ] **TRPT-03**: Failed tests include error details and screenshots (browser tests)
+- [x] **TRPT-01**: Test run produces HTML report with pass/fail per requirement ID
+- [x] **TRPT-02**: Report includes total pass/fail/skip counts and percentage
+- [x] **TRPT-03**: Failed tests include error details and screenshots (browser tests)
 
 ## v2 Requirements
 
@@ -306,9 +306,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TFEND-08 | Phase 4 | Complete |
 | TFEND-09 | Phase 4 | Complete |
 | TFEND-10 | Phase 4 | Complete |
-| TRPT-01 | Phase 5 | Pending |
-| TRPT-02 | Phase 5 | Pending |
-| TRPT-03 | Phase 5 | Pending |
+| TRPT-01 | Phase 5 | Complete |
+| TRPT-02 | Phase 5 | Complete |
+| TRPT-03 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 88 total
