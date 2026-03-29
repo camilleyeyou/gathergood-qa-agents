@@ -38,10 +38,14 @@ Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fai
 - HTML report with requirement ID coverage table (pass/fail/skip per req) — Phase 5
 - Screenshot and Playwright trace capture for failed browser tests — Phase 5
 - Idempotent test runs via RUN_ID isolation — Phase 5
+- AI QA agent framework with Claude Computer Use API + Playwright backend — Phase 6
+- Agent test scenarios covering auth, events, checkout, check-in, permissions (10 tests) — Phase 6
+- Natural language agent verdicts with token usage in HTML report — Phase 6
+- ANTHROPIC_API_KEY env config with clean skip-when-missing behavior — Phase 6
 
 ### Active
 
-All v1 requirements have been implemented.
+All v1 requirements and Phase 6 AI QA agent requirements have been implemented.
 
 ### Out of Scope
 
@@ -118,4 +122,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-29 after Phase 5 completion — all phases complete*
+*Last updated: 2026-03-29 after Phase 6 completion — all phases complete including AI QA agents*
