@@ -1,4 +1,7 @@
 """Playwright browser test fixtures for UI tests."""
+import os
+import re
+
 import pytest
 import httpx
 from settings import Settings
@@ -6,6 +9,40 @@ from factories.common import unique_email, org_name, event_title, tier_name
 from helpers.api import assert_status
 
 _settings = Settings()
+
+
+def _sanitize_nodeid(nodeid: str) -> str:
+    """Convert a pytest node ID to a filesystem-safe string."""
+    safe = re.sub(r"[/\\::\[\]<>|?*]", "_", nodeid)
+    safe = re.sub(r"_+", "_", safe)
+    return safe.strip("_")
+
+
+@pytest.fixture(scope="function")
+def context(browser, request):
+    """Browser context with Playwright tracing enabled for all UI tests.
+
+    Starts tracing at setup, saves trace zip to reports/traces/ at teardown.
+    Trace is always saved; conftest_report.py attaches it only for failed tests.
+    """
+    ctx = browser.new_context()
+    ctx.tracing.start(screenshots=True, snapshots=True)
+    yield ctx
+    # Save trace
+    trace_dir = os.path.join("reports", "traces")
+    os.makedirs(trace_dir, exist_ok=True)
+    safe_name = _sanitize_nodeid(request.node.nodeid)
+    trace_path = os.path.join(trace_dir, f"{safe_name}.zip")
+    ctx.tracing.stop(path=trace_path)
+    ctx.close()
+
+
+@pytest.fixture(scope="function")
+def page(context):
+    """Page from traced browser context."""
+    pg = context.new_page()
+    yield pg
+    pg.close()
 
 
 @pytest.fixture(scope="session")
