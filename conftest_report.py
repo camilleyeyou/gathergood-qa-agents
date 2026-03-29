@@ -18,14 +18,6 @@ import pytest
 _req_results: dict = {}
 
 
-def pytest_configure(config):
-    """Register the plugin and ensure reports directory exists."""
-    config.addinivalue_line(
-        "markers",
-        "req(id): TEST_SPEC.md requirement ID this test verifies"
-    )
-
-
 def pytest_sessionstart(session):
     """Create reports directory tree at session start."""
     os.makedirs(os.path.join("reports", "screenshots"), exist_ok=True)

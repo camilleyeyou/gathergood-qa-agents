@@ -4,6 +4,8 @@ import json
 import time
 import uuid
 
+pytest_plugins = ["conftest_report"]
+
 import httpx
 import pytest
 
