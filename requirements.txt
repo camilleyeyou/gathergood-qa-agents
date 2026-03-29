@@ -6,3 +6,4 @@ pydantic-settings==2.13.1
 python-dotenv>=1.0.0
 faker>=33.0.0
 pytest-html>=4.0.0
+anthropic==0.86.0
