@@ -102,7 +102,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 05-01-PLAN.md — HTML report plugin with requirement ID coverage, screenshot/trace capture, and idempotency verification
+- [x] 05-01-PLAN.md — HTML report plugin with requirement ID coverage, screenshot/trace capture, and idempotency verification
 
 ## Progress
 
