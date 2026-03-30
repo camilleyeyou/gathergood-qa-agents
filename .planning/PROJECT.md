@@ -42,10 +42,13 @@ Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fai
 - Agent test scenarios covering auth, events, checkout, check-in, permissions (10 tests) — Phase 6
 - Natural language agent verdicts with token usage in HTML report — Phase 6
 - ANTHROPIC_API_KEY env config with clean skip-when-missing behavior — Phase 6
+- Digital literacy persona agents (5 personas x 3 flows = 15 test functions) with friction scoring — Phase 7
+- Heatmap matrix HTML report comparing persona results side-by-side — Phase 7
+- FastAPI deployment endpoint for Railway + static report for Vercel — Phase 7
 
 ### Active
 
-All v1 requirements and Phase 6 AI QA agent requirements have been implemented.
+All v1 requirements, Phase 6 AI QA agents, and Phase 7 persona agents have been implemented.
 
 ### Out of Scope
 
@@ -122,4 +125,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-29 after Phase 6 completion — all phases complete including AI QA agents*
+*Last updated: 2026-03-30 after Phase 7 completion — digital literacy persona agents with deployment*
