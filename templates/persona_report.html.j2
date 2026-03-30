@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona Usability Report — {{ run_id }}</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 24px;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 4px;
+            color: #1a1a2e;
+        }
+        .subtitle {
+            color: #6c757d;
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-size: 1em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 32px;
+        }
+        th {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 12px 16px;
+            text-align: center;
+            font-size: 0.95em;
+            font-weight: 600;
+            border: 1px solid #dee2e6;
+        }
+        th:first-child {
+            text-align: left;
+            min-width: 200px;
+        }
+        td {
+            padding: 12px 16px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+            vertical-align: middle;
+        }
+        td.persona-name {
+            text-align: left;
+            font-weight: bold;
+            background: #f8f9fa;
+        }
+        td.persona-name .literacy-badge {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 0.75em;
+            font-weight: normal;
+            color: #6c757d;
+            background: #e9ecef;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+        .score {
+            font-size: 1.2em;
+            font-weight: bold;
+            display: block;
+        }
+        .status-icon {
+            font-size: 1em;
+            display: block;
+            margin-top: 4px;
+        }
+        /* Heatmap color classes */
+        .friction-low {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .friction-mid {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .friction-high {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        /* Details / confusion points */
+        h2 {
+            font-size: 1.3em;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+        details {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            padding: 0;
+        }
+        summary {
+            padding: 10px 16px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            user-select: none;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::before {
+            content: "+ ";
+            color: #6c757d;
+        }
+        details[open] summary::before {
+            content: "- ";
+        }
+        .confusion-list {
+            padding: 0 16px 12px 16px;
+            margin: 0;
+        }
+        .confusion-list li {
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9em;
+        }
+        .confusion-list li:last-child {
+            border-bottom: none;
+        }
+        .severity-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .severity-high {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .severity-medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .severity-low {
+            background: #d4edda;
+            color: #155724;
+        }
+        .screenshot {
+            display: block;
+            max-width: 600px;
+            margin: 8px 0;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 16px;
+            border-top: 1px solid #dee2e6;
+            color: #6c757d;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Digital Literacy Persona Report</h1>
+<p class="subtitle">Run: {{ run_id }}</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Persona</th>
+            {% for flow in flows %}
+            <th>{{ flow | replace('_', ' ') | title }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for persona in personas %}
+        <tr>
+            <td class="persona-name">
+                {{ persona | replace('_', ' ') | title }}
+                {% set sample_key = (persona, flows[0]) if flows else none %}
+                {% if sample_key and results.get(sample_key) %}
+                <span class="literacy-badge">Level {{ results[sample_key].literacy_level }}</span>
+                {% endif %}
+            </td>
+            {% for flow in flows %}
+            {% set result = results.get((persona, flow), {}) %}
+            {% set score = result.get('friction_score', 0) %}
+            {% if score <= 3 %}
+            {% set cell_class = 'friction-low' %}
+            {% elif score <= 6 %}
+            {% set cell_class = 'friction-mid' %}
+            {% else %}
+            {% set cell_class = 'friction-high' %}
+            {% endif %}
+            <td class="{{ cell_class }}">
+                <span class="score">{{ score }}</span>
+                <span class="status-icon">
+                    {% if result.get('task_completed', False) %}&#10003;{% else %}&#10007;{% endif %}
+                </span>
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% set has_confusion = namespace(value=false) %}
+{% for persona in personas %}
+  {% for flow in flows %}
+    {% set result = results.get((persona, flow), {}) %}
+    {% if result.get('confusion_points') %}
+      {% set has_confusion.value = true %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% if has_confusion.value %}
+<h2>Confusion Point Details</h2>
+
+{% for persona in personas %}
+  {% for flow in flows %}
+    {% set result = results.get((persona, flow), {}) %}
+    {% set confusion_points = result.get('confusion_points', []) %}
+    {% if confusion_points %}
+<details>
+    <summary>{{ persona | replace('_', ' ') | title }} &mdash; {{ flow | replace('_', ' ') | title }}: {{ confusion_points | length }} confusion point{{ 's' if confusion_points | length != 1 else '' }}</summary>
+    <ol class="confusion-list">
+        {% for cp in confusion_points %}
+        <li>
+            <strong>Step {{ cp.get('step', '?') }}:</strong> {{ cp.get('description', '') }}
+            {% set severity = cp.get('severity', '') | lower %}
+            {% if severity %}
+            <span class="severity-badge severity-{{ severity }}">{{ severity }}</span>
+            {% endif %}
+            {% if cp.get('screenshot_path') %}
+            <br><img class="screenshot" src="{{ cp.screenshot_path }}" alt="Screenshot at step {{ cp.get('step', '?') }}">
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ol>
+</details>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% endif %}
+
+<footer>
+    Generated by GatherGood Persona Agent Suite<br>
+    {{ generated_at }}
+</footer>
+
+</body>
+</html>
