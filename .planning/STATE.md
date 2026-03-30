@@ -127,6 +127,8 @@ None yet.
 
 ### Roadmap Evolution
 
+- Phase 8 added: Persona Dashboard Frontend — Next.js dashboard on Vercel for persona sweep results
+
 - Phase 7 added: Digital Literacy Persona Agents — AI agents simulating users with varying digital literacy to find UX friction
 
 ### Blockers/Concerns

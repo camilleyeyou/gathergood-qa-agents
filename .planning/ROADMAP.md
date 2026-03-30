@@ -18,7 +18,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 4: Permissions, Analytics & Browser UI** - Permission boundary matrix, guest list, email, analytics, public pages, and all Playwright browser tests (completed 2026-03-29)
 - [x] **Phase 5: Edge Cases & Reporting** - Edge case coverage, status transition guards, idempotency verification, and HTML report completeness (completed 2026-03-29)
 - [ ] **Phase 6: AI QA Agents** - Claude Computer Use powered browser agents that test the site like human QA testers
-- [x] **Phase 7: Digital Literacy Persona Agents** - AI agents simulating users with varying digital literacy to find UX friction and accessibility gaps, deployable on Railway/Vercel (completed 2026-03-30)
+- [x] **Phase 7: Digital Literacy Persona Agents** - AI agents simulating users with varying digital literacy to find UX friction and accessibility gaps, deployable on Railway/Vercel
+- [ ] **Phase 8: Persona Dashboard Frontend** - Next.js dashboard on Vercel with interactive heatmap, confusion drill-downs, and historical run tracking (completed 2026-03-30)
 
 ## Phase Details
 
@@ -126,7 +127,7 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -137,6 +138,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 5. Edge Cases & Reporting | 1/1 | Complete   | 2026-03-29 |
 | 6. AI QA Agents | 0/3 | Not started | - |
 | 7. Digital Literacy Persona Agents | 4/4 | Complete   | 2026-03-30 |
+| 8. Persona Dashboard Frontend | 0/0 | Not started | - |
 
 ### Phase 7: Digital Literacy Persona Agents
 **Goal**: AI agents simulate users of varying digital literacy (tech-savvy, casual, low-literacy, non-native English, impatient) across core flows, reporting friction scores, confusion points, and UX improvement suggestions — deployable on Railway and Vercel
@@ -155,3 +157,19 @@ Plans:
 - [x] 07-02-PLAN.md — Report generation: Jinja2 heatmap template and CLI report script
 - [x] 07-03-PLAN.md — Pytest test sweep: conftest, fixtures, and 15 persona test functions (5 personas x 3 flows)
 - [x] 07-04-PLAN.md — Deployment: FastAPI endpoint for Railway trigger, Procfile, and .env.example
+
+### Phase 8: Persona Dashboard Frontend
+**Goal**: Next.js dashboard deployed on Vercel showing persona sweep results with interactive heatmap matrix, confusion point drill-downs, flow comparisons, and historical run tracking — reads JSON artifacts from Phase 7's persona agent runs
+**Depends on**: Phase 7
+**Requirements**: P8-SC1, P8-SC2, P8-SC3, P8-SC4, P8-SC5
+**Success Criteria** (what must be TRUE):
+  1. Next.js app renders the persona x flow heatmap matrix with color-coded friction scores matching the static report
+  2. Clicking a cell drills down into confusion points with screenshots, severity badges, and improvement suggestions
+  3. Historical runs are selectable — users can compare friction scores across deploys to track UX improvements
+  4. Dashboard is deployable on Vercel with zero backend — reads JSON artifacts directly
+  5. Mobile-responsive layout works at 375px, 768px, and 1280px+
+**UI hint**: yes
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 8 to break down)
