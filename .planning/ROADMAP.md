@@ -18,7 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 4: Permissions, Analytics & Browser UI** - Permission boundary matrix, guest list, email, analytics, public pages, and all Playwright browser tests (completed 2026-03-29)
 - [x] **Phase 5: Edge Cases & Reporting** - Edge case coverage, status transition guards, idempotency verification, and HTML report completeness (completed 2026-03-29)
 - [ ] **Phase 6: AI QA Agents** - Claude Computer Use powered browser agents that test the site like human QA testers
-- [ ] **Phase 7: Digital Literacy Persona Agents** - AI agents simulating users with varying digital literacy to find UX friction and accessibility gaps, deployable on Railway/Vercel
+- [x] **Phase 7: Digital Literacy Persona Agents** - AI agents simulating users with varying digital literacy to find UX friction and accessibility gaps, deployable on Railway/Vercel (completed 2026-03-30)
 
 ## Phase Details
 
@@ -136,7 +136,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 4. Permissions, Analytics & Browser UI | 5/5 | Complete   | 2026-03-29 |
 | 5. Edge Cases & Reporting | 1/1 | Complete   | 2026-03-29 |
 | 6. AI QA Agents | 0/3 | Not started | - |
-| 7. Digital Literacy Persona Agents | 3/4 | In Progress|  |
+| 7. Digital Literacy Persona Agents | 4/4 | Complete   | 2026-03-30 |
 
 ### Phase 7: Digital Literacy Persona Agents
 **Goal**: AI agents simulate users of varying digital literacy (tech-savvy, casual, low-literacy, non-native English, impatient) across core flows, reporting friction scores, confusion points, and UX improvement suggestions — deployable on Railway and Vercel
@@ -148,10 +148,10 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
   3. An aggregate report compares persona results side-by-side, highlighting where low-literacy personas fail or struggle vs tech-savvy ones
   4. The system is deployable on Railway (backend/agent runner) and Vercel (report dashboard) with environment-based configuration
   5. Running a full persona sweep produces actionable UX insights, not just pass/fail
-**Plans:** 3/4 plans executed
+**Plans:** 4/4 plans complete
 
 Plans:
 - [x] 07-01-PLAN.md — Core persona library: persona definitions, friction scorer, persona runner, artifact writer
 - [x] 07-02-PLAN.md — Report generation: Jinja2 heatmap template and CLI report script
-- [ ] 07-03-PLAN.md — Pytest test sweep: conftest, fixtures, and 15 persona test functions (5 personas x 3 flows)
+- [x] 07-03-PLAN.md — Pytest test sweep: conftest, fixtures, and 15 persona test functions (5 personas x 3 flows)
 - [x] 07-04-PLAN.md — Deployment: FastAPI endpoint for Railway trigger, Procfile, and .env.example
