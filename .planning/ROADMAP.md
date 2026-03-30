@@ -18,6 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 4: Permissions, Analytics & Browser UI** - Permission boundary matrix, guest list, email, analytics, public pages, and all Playwright browser tests (completed 2026-03-29)
 - [x] **Phase 5: Edge Cases & Reporting** - Edge case coverage, status transition guards, idempotency verification, and HTML report completeness (completed 2026-03-29)
 - [ ] **Phase 6: AI QA Agents** - Claude Computer Use powered browser agents that test the site like human QA testers
+- [ ] **Phase 7: Digital Literacy Persona Agents** - AI agents simulating users with varying digital literacy to find UX friction and accessibility gaps, deployable on Railway/Vercel
 
 ## Phase Details
 
@@ -125,7 +126,7 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -135,3 +136,19 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 4. Permissions, Analytics & Browser UI | 5/5 | Complete   | 2026-03-29 |
 | 5. Edge Cases & Reporting | 1/1 | Complete   | 2026-03-29 |
 | 6. AI QA Agents | 0/3 | Not started | - |
+| 7. Digital Literacy Persona Agents | 0/0 | Not started | - |
+
+### Phase 7: Digital Literacy Persona Agents
+**Goal**: AI agents simulate users of varying digital literacy (tech-savvy, casual, low-literacy, non-native English, impatient) across core flows, reporting friction scores, confusion points, and UX improvement suggestions — deployable on Railway and Vercel
+**Depends on**: Phase 6
+**Requirements**: TBD
+**Success Criteria** (what must be TRUE):
+  1. Each persona agent completes core flows (registration, event browsing, checkout) and produces a structured usability report with friction score, confusion points, and improvement suggestions
+  2. At least 5 distinct digital literacy personas are configurable via prompt templates
+  3. An aggregate report compares persona results side-by-side, highlighting where low-literacy personas fail or struggle vs tech-savvy ones
+  4. The system is deployable on Railway (backend/agent runner) and Vercel (report dashboard) with environment-based configuration
+  5. Running a full persona sweep produces actionable UX insights, not just pass/fail
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 7 to break down)

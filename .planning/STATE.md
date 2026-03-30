@@ -114,6 +114,10 @@ Recent decisions affecting current work:
 
 None yet.
 
+### Roadmap Evolution
+
+- Phase 7 added: Digital Literacy Persona Agents — AI agents simulating users with varying digital literacy to find UX friction
+
 ### Blockers/Concerns
 
 - [Phase 3]: Stripe mode (live vs. test) of deployed GatherGood backend unknown — detection logic must be verified empirically at Phase 3
