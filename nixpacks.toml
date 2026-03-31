@@ -1,11 +1,36 @@
 [phases.setup]
-nixPkgs = ["chromium", "chromium-chromedriver"]
+# System deps needed by Playwright Chromium
+nixPkgs = [
+  "bash",
+  "chromium",
+  "nss",
+  "at-spi2-atk",
+  "cups",
+  "libdrm",
+  "libxkbcommon",
+  "mesa",
+  "pango",
+  "cairo",
+  "alsa-lib",
+  "xorg.libX11",
+  "xorg.libXcomposite",
+  "xorg.libXdamage",
+  "xorg.libXext",
+  "xorg.libXfixes",
+  "xorg.libXrandr",
+  "xorg.libxcb",
+  "dbus",
+  "glib",
+  "gtk3",
+  "expat",
+  "nspr",
+]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt", "playwright install --with-deps chromium"]
+cmds = ["pip install -r requirements.txt"]
 
 [phases.build]
-cmds = ["playwright install --with-deps chromium"]
+cmds = ["PLAYWRIGHT_BROWSERS_PATH=/app/.browsers python -m playwright install chromium"]
 
 [start]
-cmd = "playwright install chromium && uvicorn api.persona_runner:app --host 0.0.0.0 --port ${PORT:-8000}"
+cmd = "bash start.sh"

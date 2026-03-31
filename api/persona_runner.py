@@ -90,11 +90,17 @@ def _run_sweep(job_id: str, personas: list[str] | None, flows: list[str] | None)
         elif flows:
             cmd.extend(["-k", " or ".join(flows)])
 
+        # Pass PLAYWRIGHT_BROWSERS_PATH so the subprocess finds the installed browser
+        env = {**os.environ}
+        if os.path.exists("/app/.browsers"):
+            env["PLAYWRIGHT_BROWSERS_PATH"] = "/app/.browsers"
+
         result = subprocess.run(
             cmd,
             capture_output=True,
             text=True,
             timeout=1800,  # 30-minute timeout
+            env=env,
         )
 
         sweeps[job_id]["status"] = "completed" if result.returncode == 0 else "failed"
