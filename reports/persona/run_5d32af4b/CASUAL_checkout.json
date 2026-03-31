@@ -1,0 +1,14 @@
+{
+  "persona": "CASUAL",
+  "literacy_level": 3,
+  "verdict": "INCONCLUSIVE",
+  "task_completed": false,
+  "friction_score": 10,
+  "steps_taken": 25,
+  "optimal_steps": 5,
+  "confusion_points": [],
+  "suggestions": [],
+  "tokens_used": 545355,
+  "reasoning": "Good, the events page is loading. Let me wait and scroll down to see the events.",
+  "flow": "checkout"
+}

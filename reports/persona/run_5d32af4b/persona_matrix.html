@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona Usability Report — run_5d32af4b</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 24px;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 4px;
+            color: #1a1a2e;
+        }
+        .subtitle {
+            color: #6c757d;
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-size: 1em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 32px;
+        }
+        th {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 12px 16px;
+            text-align: center;
+            font-size: 0.95em;
+            font-weight: 600;
+            border: 1px solid #dee2e6;
+        }
+        th:first-child {
+            text-align: left;
+            min-width: 200px;
+        }
+        td {
+            padding: 12px 16px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+            vertical-align: middle;
+        }
+        td.persona-name {
+            text-align: left;
+            font-weight: bold;
+            background: #f8f9fa;
+        }
+        td.persona-name .literacy-badge {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 0.75em;
+            font-weight: normal;
+            color: #6c757d;
+            background: #e9ecef;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+        .score {
+            font-size: 1.2em;
+            font-weight: bold;
+            display: block;
+        }
+        .status-icon {
+            font-size: 1em;
+            display: block;
+            margin-top: 4px;
+        }
+        /* Heatmap color classes */
+        .friction-low {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .friction-mid {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .friction-high {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        /* Details / confusion points */
+        h2 {
+            font-size: 1.3em;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+        details {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            padding: 0;
+        }
+        summary {
+            padding: 10px 16px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            user-select: none;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::before {
+            content: "+ ";
+            color: #6c757d;
+        }
+        details[open] summary::before {
+            content: "- ";
+        }
+        .confusion-list {
+            padding: 0 16px 12px 16px;
+            margin: 0;
+        }
+        .confusion-list li {
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9em;
+        }
+        .confusion-list li:last-child {
+            border-bottom: none;
+        }
+        .severity-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .severity-high {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .severity-medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .severity-low {
+            background: #d4edda;
+            color: #155724;
+        }
+        .screenshot {
+            display: block;
+            max-width: 600px;
+            margin: 8px 0;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 16px;
+            border-top: 1px solid #dee2e6;
+            color: #6c757d;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Digital Literacy Persona Report</h1>
+<p class="subtitle">Run: run_5d32af4b</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Persona</th>
+            
+            <th>Registration</th>
+            
+            <th>Browsing</th>
+            
+            <th>Checkout</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td class="persona-name">
+                Casual
+                
+                
+                <span class="literacy-badge">Level 3</span>
+                
+            </td>
+            
+            
+            
+            
+            
+            
+            <td class="friction-mid">
+                <span class="score">4</span>
+                <span class="status-icon">
+                    &#10003;
+                </span>
+            </td>
+            
+            
+            
+            
+            
+            
+            <td class="friction-high">
+                <span class="score">7</span>
+                <span class="status-icon">
+                    &#10003;
+                </span>
+            </td>
+            
+            
+            
+            
+            
+            
+            <td class="friction-high">
+                <span class="score">10</span>
+                <span class="status-icon">
+                    &#10007;
+                </span>
+            </td>
+            
+        </tr>
+        
+        <tr>
+            <td class="persona-name">
+                Low Literacy
+                
+                
+                <span class="literacy-badge">Level 1</span>
+                
+            </td>
+            
+            
+            
+            
+            
+            
+            <td class="friction-low">
+                <span class="score">2</span>
+                <span class="status-icon">
+                    &#10003;
+                </span>
+            </td>
+            
+            
+            
+            
+            
+            
+            <td class="friction-high">
+                <span class="score">7</span>
+                <span class="status-icon">
+                    &#10003;
+                </span>
+            </td>
+            
+            
+            
+            
+            
+            
+            <td class="friction-low">
+                <span class="score">0</span>
+                <span class="status-icon">
+                    &#10007;
+                </span>
+            </td>
+            
+        </tr>
+        
+        <tr>
+            <td class="persona-name">
+                Tech Savvy
+                
+                
+                <span class="literacy-badge">Level 5</span>
+                
+            </td>
+            
+            
+            
+            
+            
+            
+            <td class="friction-high">
+                <span class="score">10</span>
+                <span class="status-icon">
+                    &#10007;
+                </span>
+            </td>
+            
+            
+            
+            
+            
+            
+            <td class="friction-low">
+                <span class="score">2</span>
+                <span class="status-icon">
+                    &#10003;
+                </span>
+            </td>
+            
+            
+            
+            
+            
+            
+            <td class="friction-high">
+                <span class="score">10</span>
+                <span class="status-icon">
+                    &#10007;
+                </span>
+            </td>
+            
+        </tr>
+        
+    </tbody>
+</table>
+
+
+
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+  
+
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+  
+
+  
+    
+    
+  
+    
+    
+      
+    
+  
+    
+    
+  
+
+
+
+<h2>Confusion Point Details</h2>
+
+
+  
+    
+    
+    
+<details>
+    <summary>Casual &mdash; Registration: 2 confusion points</summary>
+    <ol class="confusion-list">
+        
+        <li>
+            <strong>Step 6:</strong> The email placeholder text said 'you@organization.org' which made me briefly wonder if this site was only for organisations and whether my regular personal email would be accepted
+            
+            
+            <span class="severity-badge severity-low">low</span>
+            
+            
+        </li>
+        
+        <li>
+            <strong>Step 11:</strong> There was no confirmation pop-up or review screen before the account was created — clicking 'Create account' immediately submitted the form. I would have expected a 'Please review your details' step or at least a confirmation dialog before committing
+            
+            
+            <span class="severity-badge severity-medium">medium</span>
+            
+            
+        </li>
+        
+    </ol>
+</details>
+    
+  
+    
+    
+    
+<details>
+    <summary>Casual &mdash; Browsing: 3 confusion points</summary>
+    <ol class="confusion-list">
+        
+        <li>
+            <strong>Step 4:</strong> Several event names looked like technical test IDs (e.g. 'ProbeEvent-1bc49a64', 'P2Event-43ed13c2', 'PubTest-699bcd7b', 'AnItEvent-adf37849'). As a regular user I found these confusing and off-putting — they don't look like real events.
+            
+            
+            <span class="severity-badge severity-high">high</span>
+            
+            
+        </li>
+        
+        <li>
+            <strong>Step 3:</strong> When I first clicked what I thought was the 'Let's talk About our visions' card, I landed on a different event (PubTest-699bcd7b). The click target area on the event card was unclear — I wasn't sure exactly where to click to open a specific card.
+            
+            
+            <span class="severity-badge severity-medium">medium</span>
+            
+            
+        </li>
+        
+        <li>
+            <strong>Step 6:</strong> The event time was '4:35 PM – 4:36 PM' which is only 1 minute long. This looks like a data entry error and made me doubt whether the event information was accurate or trustworthy.
+            
+            
+            <span class="severity-badge severity-medium">medium</span>
+            
+            
+        </li>
+        
+    </ol>
+</details>
+    
+  
+    
+    
+    
+  
+
+  
+    
+    
+    
+<details>
+    <summary>Low Literacy &mdash; Registration: 1 confusion point</summary>
+    <ol class="confusion-list">
+        
+        <li>
+            <strong>Step 9:</strong> After clicking 'Create account', a small spinning circle appeared next to the button text. I was not sure if this meant the page was loading, something had gone wrong, or I needed to do something else. I had to wait and take another look to confirm it was just processing.
+            
+            
+            <span class="severity-badge severity-low">low</span>
+            
+            
+        </li>
+        
+    </ol>
+</details>
+    
+  
+    
+    
+    
+<details>
+    <summary>Low Literacy &mdash; Browsing: 4 confusion points</summary>
+    <ol class="confusion-list">
+        
+        <li>
+            <strong>Step 1:</strong> The event cards at the bottom of the screen were cut off - I could only see the top portion (date and category labels) but not the event names or descriptions. It was unclear if I needed to scroll to see them or if clicking was possible.
+            
+            
+            <span class="severity-badge severity-medium">medium</span>
+            
+            
+        </li>
+        
+        <li>
+            <strong>Step 3:</strong> Small circular icons with letters (like 'T' for The Visionairs, 'P' for ProbOrg) appeared next to the 'by [organizer]' text. I was not sure what these icon circles meant - they had no text label explaining them.
+            
+            
+            <span class="severity-badge severity-low">low</span>
+            
+            
+        </li>
+        
+        <li>
+            <strong>Step 4:</strong> The first click on the event card (on the image area) did not navigate to the details page - it just scrolled back to the top of the listing page. There was no visible 'View Details' button or link. I had to figure out that clicking the event title text itself was the way to open the details page.
+            
+            
+            <span class="severity-badge severity-high">high</span>
+            
+            
+        </li>
+        
+        <li>
+            <strong>Step 6:</strong> On the event details page, the 'ORGANIZED BY' section shows a circular icon with just the letter 'T' next to 'The Visionairs'. This icon-only circle has no label explaining what it represents, though I eventually guessed it was an initial/avatar.
+            
+            
+            <span class="severity-badge severity-low">low</span>
+            
+            
+        </li>
+        
+    </ol>
+</details>
+    
+  
+    
+    
+    
+  
+
+  
+    
+    
+    
+  
+    
+    
+    
+<details>
+    <summary>Tech Savvy &mdash; Browsing: 2 confusion points</summary>
+    <ol class="confusion-list">
+        
+        <li>
+            <strong>Step 2:</strong> Event cards didn't show titles or descriptions above the fold — had to click blind based on card type/date badges. The card image area just showed a large letter 'W' or 'M' with no readable event name until scrolling further down the card.
+            
+            
+            <span class="severity-badge severity-medium">medium</span>
+            
+            
+        </li>
+        
+        <li>
+            <strong>Step 3:</strong> The event name 'PubTest-699bcd7b' looks like a test/dummy data artifact, not a real event title. Mildly confusing whether this is production content.
+            
+            
+            <span class="severity-badge severity-low">low</span>
+            
+            
+        </li>
+        
+    </ol>
+</details>
+    
+  
+    
+    
+    
+  
+
+
+
+<footer>
+    Generated by GatherGood Persona Agent Suite<br>
+    2026-03-31T17:45:30.479004+00:00
+</footer>
+
+</body>
+</html>
