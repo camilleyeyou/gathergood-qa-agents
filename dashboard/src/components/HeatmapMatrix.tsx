@@ -10,6 +10,8 @@ import {
 } from '@/components/ui/sheet'
 import { DetailPanel } from '@/components/DetailPanel'
 import { DeltaBadge } from '@/components/DeltaBadge'
+import { RunSelector } from '@/components/RunSelector'
+import { Sparkline } from '@/components/Sparkline'
 import {
   ALL_PERSONAS,
   ALL_FLOWS,
@@ -46,27 +48,24 @@ export function HeatmapMatrix({ runs }: HeatmapMatrixProps) {
     ? resultMap[`${selectedCell.persona}__${selectedCell.flow}`]
     : undefined
 
+  // Build sparkline data for a given persona-flow pair across all runs
+  function buildSparklineData(persona: string, flow: string) {
+    return runs.map((run) => {
+      const map = buildResultMap(run)
+      const result = map[`${persona}__${flow}`]
+      return { run: run.runId, score: result?.friction_score ?? 0 }
+    }).filter((d) => d.score > 0)
+  }
+
   return (
     <div className="space-y-4">
       {/* Run selector */}
-      {runs.length > 1 && (
-        <div className="flex items-center gap-3">
-          <label htmlFor="run-selector" className="text-sm font-medium text-gray-700">
-            Run:
-          </label>
-          <select
-            id="run-selector"
-            value={activeRunIndex}
-            onChange={(e) => setActiveRunIndex(Number(e.target.value))}
-            className="rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            {runs.map((run, idx) => (
-              <option key={run.runId} value={idx}>
-                {run.runId} {idx === 0 ? '(latest)' : ''}
-              </option>
-            ))}
-          </select>
-        </div>
+      {runs.length >= 1 && (
+        <RunSelector
+          runs={runs}
+          activeIndex={activeRunIndex}
+          onRunChange={setActiveRunIndex}
+        />
       )}
 
       {runs.length === 0 ? (
@@ -181,7 +180,14 @@ export function HeatmapMatrix({ runs }: HeatmapMatrixProps) {
                 : 'Details'}
             </SheetTitle>
           </SheetHeader>
-          <div className="px-6 py-4">
+          <div className="px-6 py-4 space-y-4">
+            {/* Sparkline trend for this persona-flow pair */}
+            {selectedCell && runs.length >= 2 && (
+              <div>
+                <p className="text-xs font-medium text-gray-500 mb-1">Friction trend (all runs)</p>
+                <Sparkline data={buildSparklineData(selectedCell.persona, selectedCell.flow)} />
+              </div>
+            )}
             <DetailPanel result={selectedResult} />
           </div>
         </SheetContent>
