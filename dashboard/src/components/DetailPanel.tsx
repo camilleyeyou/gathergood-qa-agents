@@ -1,6 +1,5 @@
 'use client'
 
-import path from 'path'
 import { Badge } from '@/components/ui/badge'
 import { PERSONA_LABELS, FLOW_LABELS, type PersonaResult } from '@/lib/types'
 import { frictionClass, cn } from '@/lib/utils'
@@ -102,7 +101,7 @@ export function DetailPanel({ result }: DetailPanelProps) {
                   <div className="mt-2">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={`/screenshots/${path.basename(cp.screenshot_path)}`}
+                      src={`/screenshots/${cp.screenshot_path.split('/').pop()}`}
                       alt={`Screenshot at step ${cp.step}`}
                       className="rounded border border-gray-200 max-w-full"
                     />

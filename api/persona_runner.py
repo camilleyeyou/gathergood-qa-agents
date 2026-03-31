@@ -3,11 +3,14 @@
 Endpoints:
     POST /sweep       — Start a background persona sweep; returns job_id.
     GET  /sweep/{id}  — Poll job status and result path when done.
+    GET  /results      — List all available run IDs with metadata.
+    GET  /results/{id} — Return all persona results for a specific run.
     GET  /health      — Liveness check; confirms ANTHROPIC_API_KEY is configured.
 
 The sweep runs pytest (tests/persona_agents/) in a subprocess to avoid
 Playwright browser lifecycle conflicts inside the FastAPI event loop.
 """
+import json
 import os
 import subprocess
 import sys
@@ -15,6 +18,7 @@ import uuid
 from datetime import datetime, timezone
 
 from fastapi import BackgroundTasks, FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from settings import Settings
@@ -25,6 +29,22 @@ app = FastAPI(
 )
 
 _settings = Settings()
+
+# ---------------------------------------------------------------------------
+# CORS — allow the Vercel dashboard to call this API
+# ---------------------------------------------------------------------------
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# ---------------------------------------------------------------------------
+# Constants
+# ---------------------------------------------------------------------------
+REPORT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "reports", "persona")
 
 # ---------------------------------------------------------------------------
 # In-memory job store (resets on process restart; sufficient for trigger use).
@@ -57,16 +77,7 @@ class SweepRequest(BaseModel):
 
 
 def _run_sweep(job_id: str, personas: list[str] | None, flows: list[str] | None) -> None:
-    """Run pytest against tests/persona_agents/ in a subprocess.
-
-    Uses subprocess rather than direct import to avoid Playwright browser
-    lifecycle issues inside the FastAPI event loop (RESEARCH Pitfall 4).
-
-    Args:
-        job_id: Key in the ``sweeps`` store to update with progress/results.
-        personas: Optional list of persona name substrings for pytest -k filtering.
-        flows: Optional list of flow name substrings for pytest -k filtering.
-    """
+    """Run pytest against tests/persona_agents/ in a subprocess."""
     try:
         cmd = [sys.executable, "-m", "pytest", "tests/persona_agents/", "-v", "--tb=short"]
 
@@ -88,16 +99,14 @@ def _run_sweep(job_id: str, personas: list[str] | None, flows: list[str] | None)
 
         sweeps[job_id]["status"] = "completed" if result.returncode == 0 else "failed"
         sweeps[job_id]["completed_at"] = datetime.now(timezone.utc).isoformat()
-        sweeps[job_id]["error"] = result.stderr if result.returncode != 0 else None
+        sweeps[job_id]["stdout"] = result.stdout[-2000:] if result.stdout else None
+        sweeps[job_id]["error"] = result.stderr[-2000:] if result.returncode != 0 else None
 
-        # Find the latest run directory in reports/persona/
-        report_dir = "reports/persona"
-        if os.path.exists(report_dir):
-            runs = sorted([d for d in os.listdir(report_dir) if d.startswith("run_")])
+        # Find the latest run directory
+        if os.path.exists(REPORT_DIR):
+            runs = sorted([d for d in os.listdir(REPORT_DIR) if not d.startswith(".")])
             if runs:
-                sweeps[job_id]["result_path"] = os.path.join(
-                    report_dir, runs[-1], "persona_matrix.html"
-                )
+                sweeps[job_id]["run_id"] = runs[-1]
 
     except subprocess.TimeoutExpired:
         sweeps[job_id]["status"] = "failed"
@@ -116,17 +125,15 @@ def _run_sweep(job_id: str, personas: list[str] | None, flows: list[str] | None)
 
 @app.post("/sweep")
 def start_sweep(request: SweepRequest, background_tasks: BackgroundTasks) -> dict:
-    """Start a background persona sweep.
-
-    Returns:
-        JSON with ``job_id`` and initial ``status`` of "running".
-    """
+    """Start a background persona sweep."""
     job_id = str(uuid.uuid4())
     sweeps[job_id] = {
+        "job_id": job_id,
         "status": "running",
-        "result_path": None,
+        "run_id": None,
         "started_at": datetime.now(timezone.utc).isoformat(),
         "completed_at": None,
+        "stdout": None,
         "error": None,
     }
     background_tasks.add_task(_run_sweep, job_id, request.personas, request.flows)
@@ -135,29 +142,55 @@ def start_sweep(request: SweepRequest, background_tasks: BackgroundTasks) -> dic
 
 @app.get("/sweep/{job_id}")
 def get_sweep_status(job_id: str) -> dict:
-    """Poll the status of a sweep job.
-
-    Args:
-        job_id: UUID returned by POST /sweep.
-
-    Returns:
-        Job record with status, result_path, started_at, completed_at, error.
-
-    Raises:
-        HTTPException 404: If job_id is not found in the in-memory store.
-    """
+    """Poll the status of a sweep job."""
     if job_id not in sweeps:
         raise HTTPException(status_code=404, detail="Job not found")
     return sweeps[job_id]
 
 
+@app.get("/results")
+def list_results() -> dict:
+    """List all available persona run IDs with basic metadata."""
+    if not os.path.exists(REPORT_DIR):
+        return {"runs": []}
+
+    runs = []
+    for name in sorted(os.listdir(REPORT_DIR), reverse=True):
+        if name.startswith("."):
+            continue
+        run_dir = os.path.join(REPORT_DIR, name)
+        if not os.path.isdir(run_dir):
+            continue
+
+        json_files = [f for f in os.listdir(run_dir) if f.endswith(".json")]
+        runs.append({
+            "run_id": name,
+            "result_count": len(json_files),
+        })
+
+    return {"runs": runs}
+
+
+@app.get("/results/{run_id}")
+def get_run_results(run_id: str) -> dict:
+    """Return all persona results for a specific run."""
+    run_dir = os.path.join(REPORT_DIR, run_id)
+    if not os.path.exists(run_dir):
+        raise HTTPException(status_code=404, detail="Run not found")
+
+    results = []
+    for f in sorted(os.listdir(run_dir)):
+        if not f.endswith(".json"):
+            continue
+        with open(os.path.join(run_dir, f)) as fh:
+            results.append(json.load(fh))
+
+    return {"run_id": run_id, "results": results}
+
+
 @app.get("/health")
 def health() -> dict:
-    """Liveness check.
-
-    Returns:
-        JSON with ``status`` of "ok" and ``anthropic_key_configured`` boolean.
-    """
+    """Liveness check."""
     return {
         "status": "ok",
         "anthropic_key_configured": bool(_settings.ANTHROPIC_API_KEY),

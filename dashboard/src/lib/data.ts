@@ -1,29 +1,48 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import type { PersonaResult } from './types'
+import type { PersonaResult, RunData } from './types'
 
-const PERSONA_DIR = path.join(process.cwd(), '..', 'reports', 'persona')
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
 
-export function readPersonaRuns(): string[] {
-  if (!fs.existsSync(PERSONA_DIR)) return []
-  return fs.readdirSync(PERSONA_DIR)
-    .filter(name => {
-      // Skip dotfiles like .gitkeep
-      if (name.startsWith('.')) return false
-      const fullPath = path.join(PERSONA_DIR, name)
-      return fs.statSync(fullPath).isDirectory()
+export async function fetchRuns(): Promise<RunData[]> {
+  const res = await fetch(`${API_URL}/results`, { cache: 'no-store' })
+  if (!res.ok) return []
+  const data = await res.json()
+
+  const runs: RunData[] = []
+  for (const run of data.runs) {
+    const detailRes = await fetch(`${API_URL}/results/${run.run_id}`, { cache: 'no-store' })
+    if (!detailRes.ok) continue
+    const detail = await detailRes.json()
+    runs.push({
+      runId: run.run_id,
+      results: detail.results as PersonaResult[],
     })
-    .sort()
-    .reverse()  // Most recent first (D-05) — ISO timestamp IDs sort lexicographically
+  }
+  return runs
 }
 
-export function loadRunData(runId: string): PersonaResult[] {
-  const runDir = path.join(PERSONA_DIR, runId)
-  if (!fs.existsSync(runDir)) return []
-  return fs.readdirSync(runDir)
-    .filter(f => f.endsWith('.json'))
-    .map(f => {
-      const content = fs.readFileSync(path.join(runDir, f), 'utf-8')
-      return JSON.parse(content) as PersonaResult
-    })
+export async function startSweep(personas?: string[], flows?: string[]): Promise<{ job_id: string }> {
+  const res = await fetch(`${API_URL}/sweep`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ personas: personas ?? null, flows: flows ?? null }),
+  })
+  if (!res.ok) throw new Error(`Failed to start sweep: ${res.statusText}`)
+  return res.json()
+}
+
+export async function pollSweepStatus(jobId: string): Promise<{
+  status: string
+  run_id: string | null
+  error: string | null
+  stdout: string | null
+}> {
+  const res = await fetch(`${API_URL}/sweep/${jobId}`, { cache: 'no-store' })
+  if (!res.ok) throw new Error(`Failed to poll sweep: ${res.statusText}`)
+  return res.json()
+}
+
+export async function checkHealth(): Promise<{ status: string; anthropic_key_configured: boolean }> {
+  const res = await fetch(`${API_URL}/health`, { cache: 'no-store' })
+  if (!res.ok) throw new Error('API unreachable')
+  return res.json()
 }
