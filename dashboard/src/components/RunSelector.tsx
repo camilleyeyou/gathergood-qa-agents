@@ -36,7 +36,7 @@ function formatRunId(runId: string): string {
         hour: '2-digit',
         minute: '2-digit',
       })
-    } catch {
+    } catch (_) {
       // fall through to raw
     }
   }
@@ -93,10 +93,10 @@ export function RunSelector({ runs, activeIndex, onRunChange }: RunSelectorProps
 
       <Select
         value={String(activeIndex)}
-        onValueChange={(value: string | null) => { if (value !== null) onRunChange(Number(value)) }}
+        onValueChange={(value) => { if (value !== null) onRunChange(Number(value)) }}
         disabled={runs.length === 1}
       >
-        <SelectTrigger className="w-auto min-w-[200px]">
+        <SelectTrigger className="w-auto min-w-50">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>

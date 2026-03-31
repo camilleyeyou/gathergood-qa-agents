@@ -75,17 +75,17 @@ export function HeatmapMatrix({ runs }: HeatmapMatrixProps) {
       ) : (
         /* Heatmap table with horizontal scroll for mobile (P8-SC5) */
         <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
-          <table className="border-collapse min-w-[640px]">
+          <table className="border-collapse min-w-160">
             <thead>
               <tr>
                 {/* Empty corner cell */}
-                <th className="bg-gray-50 p-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-gray-200 min-w-[140px]">
+                <th className="bg-gray-50 p-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-gray-200 min-w-35">
                   Persona / Flow
                 </th>
                 {ALL_FLOWS.map((flow) => (
                   <th
                     key={flow}
-                    className="bg-gray-50 p-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-gray-200 min-w-[100px]"
+                    className="bg-gray-50 p-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-gray-200 min-w-25"
                   >
                     {FLOW_LABELS[flow]}
                   </th>
@@ -130,7 +130,7 @@ export function HeatmapMatrix({ runs }: HeatmapMatrixProps) {
                         className={[
                           frictionClass(result.friction_score),
                           'relative border-b border-gray-200',
-                          'min-w-[100px] h-[80px]',
+                          'min-w-25 h-20',
                           'cursor-pointer hover:opacity-80 transition-opacity',
                           isSelected ? 'ring-2 ring-inset ring-blue-500' : '',
                         ].join(' ')}
@@ -171,7 +171,7 @@ export function HeatmapMatrix({ runs }: HeatmapMatrixProps) {
       >
         <SheetContent
           side="right"
-          className="w-full sm:w-[480px] sm:max-w-[480px] overflow-y-auto p-0"
+          className="w-full sm:w-120 sm:max-w-120 overflow-y-auto p-0"
         >
           <SheetHeader className="px-6 py-4 border-b">
             <SheetTitle>
