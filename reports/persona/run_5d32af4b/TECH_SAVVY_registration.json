@@ -1,0 +1,14 @@
+{
+  "persona": "TECH_SAVVY",
+  "literacy_level": 5,
+  "verdict": "PASS",
+  "task_completed": false,
+  "friction_score": 10,
+  "steps_taken": 15,
+  "optimal_steps": 6,
+  "confusion_points": [],
+  "suggestions": [],
+  "tokens_used": 206939,
+  "reasoning": "Confirm password field is now focused (green border). Type the same password.",
+  "flow": "registration"
+}

@@ -1,0 +1,14 @@
+{
+  "persona": "TECH_SAVVY",
+  "literacy_level": 5,
+  "verdict": "INCONCLUSIVE",
+  "task_completed": false,
+  "friction_score": 10,
+  "steps_taken": 15,
+  "optimal_steps": 5,
+  "confusion_points": [],
+  "suggestions": [],
+  "tokens_used": 209485,
+  "reasoning": "Back button didn't work. Let me click \"Events\" in the breadcrumb.",
+  "flow": "checkout"
+}
