@@ -93,7 +93,7 @@ class PlaywrightComputerBackend:
             elif action == "type":
                 self.type_text(params["text"])
             elif action == "key":
-                self.key(params["key"])
+                self.key(params.get("key") or params.get("text", "Return"))
             elif action == "scroll":
                 x, y = params["coordinate"]
                 self.scroll(x, y, params["scroll_direction"], params["scroll_amount"])

@@ -1,4 +1,5 @@
 """Core agent loop — drives Claude Computer Use scenarios to completion."""
+import time
 from typing import Any
 
 import anthropic
@@ -92,7 +93,22 @@ def run_agent_scenario(
         if system_prompt:
             kwargs["system"] = system_prompt
 
-        response = client.beta.messages.create(**kwargs)
+        # Retry with exponential backoff on rate limit errors
+        for attempt in range(4):
+            try:
+                response = client.beta.messages.create(**kwargs)
+                break
+            except anthropic.RateLimitError:
+                if attempt == 3:
+                    return {
+                        "verdict": "INCONCLUSIVE",
+                        "reasoning": "Rate limited after 4 retries. Try again later.",
+                        "steps": iterations,
+                        "input_tokens": total_input_tokens,
+                        "output_tokens": total_output_tokens,
+                    }
+                wait = 2 ** attempt * 15  # 15s, 30s, 60s, 120s
+                time.sleep(wait)
 
         # Track token usage
         total_input_tokens += response.usage.input_tokens

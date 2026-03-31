@@ -92,8 +92,11 @@ def _create_event_with_checkout():
 
         # Complete a free checkout to create an attendee
         checkout_resp = client.post(
-            f"/organizations/{org_slug}/events/{event_slug}/checkout/",
+            "/checkout/",
             json={
+                "action": "free_complete",
+                "org_slug": org_slug,
+                "event_slug": event_slug,
                 "items": [{"tier_id": tier_id, "quantity": 1}],
                 "billing_name": "Agent CheckinTester",
                 "billing_email": email,
