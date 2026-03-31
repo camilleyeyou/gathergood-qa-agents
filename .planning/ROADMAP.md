@@ -169,7 +169,9 @@ Plans:
   4. Dashboard is deployable on Vercel with zero backend — reads JSON artifacts directly
   5. Mobile-responsive layout works at 375px, 768px, and 1280px+
 **UI hint**: yes
-**Plans:** 0 plans
+**Plans:** 3 plans
 
 Plans:
-- [ ] TBD (run /gsd:plan-phase 8 to break down)
+- [ ] 08-01-PLAN.md — Next.js scaffold, types, data loading, and utility helpers
+- [ ] 08-02-PLAN.md — Heatmap matrix, detail panel slide-over, and page wiring
+- [ ] 08-03-PLAN.md — Run selector, sparklines, and visual verification checkpoint
