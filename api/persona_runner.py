@@ -16,6 +16,7 @@ import subprocess
 import sys
 import uuid
 from datetime import datetime, timezone
+from contextlib import asynccontextmanager
 
 from fastapi import BackgroundTasks, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -23,9 +24,38 @@ from pydantic import BaseModel
 
 from settings import Settings
 
+# ---------------------------------------------------------------------------
+# Ensure Playwright browsers are installed at startup
+# ---------------------------------------------------------------------------
+BROWSERS_PATH = "/app/.browsers"
+os.environ["PLAYWRIGHT_BROWSERS_PATH"] = BROWSERS_PATH
+
+
+def _install_playwright():
+    """Install Playwright Chromium if not already present."""
+    print("=== Checking Playwright Chromium ===", flush=True)
+    result = subprocess.run(
+        [sys.executable, "-m", "playwright", "install", "--with-deps", "chromium"],
+        capture_output=True,
+        text=True,
+        env={**os.environ, "PLAYWRIGHT_BROWSERS_PATH": BROWSERS_PATH},
+    )
+    if result.returncode == 0:
+        print(f"=== Playwright Chromium ready at {BROWSERS_PATH} ===", flush=True)
+    else:
+        print(f"=== Playwright install failed: {result.stderr} ===", flush=True)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    _install_playwright()
+    yield
+
+
 app = FastAPI(
     title="Persona Agent Runner",
     description="Triggers digital literacy persona sweeps against the GatherGood platform",
+    lifespan=lifespan,
 )
 
 _settings = Settings()
