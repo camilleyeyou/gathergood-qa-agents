@@ -138,7 +138,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 5. Edge Cases & Reporting | 1/1 | Complete   | 2026-03-29 |
 | 6. AI QA Agents | 0/3 | Not started | - |
 | 7. Digital Literacy Persona Agents | 4/4 | Complete   | 2026-03-30 |
-| 8. Persona Dashboard Frontend | 0/0 | Not started | - |
+| 8. Persona Dashboard Frontend | 1/3 | In Progress|  |
 
 ### Phase 7: Digital Literacy Persona Agents
 **Goal**: AI agents simulate users of varying digital literacy (tech-savvy, casual, low-literacy, non-native English, impatient) across core flows, reporting friction scores, confusion points, and UX improvement suggestions — deployable on Railway and Vercel
@@ -169,9 +169,9 @@ Plans:
   4. Dashboard is deployable on Vercel with zero backend — reads JSON artifacts directly
   5. Mobile-responsive layout works at 375px, 768px, and 1280px+
 **UI hint**: yes
-**Plans:** 3 plans
+**Plans:** 1/3 plans executed
 
 Plans:
-- [ ] 08-01-PLAN.md — Next.js scaffold, types, data loading, and utility helpers
+- [x] 08-01-PLAN.md — Next.js scaffold, types, data loading, and utility helpers
 - [ ] 08-02-PLAN.md — Heatmap matrix, detail panel slide-over, and page wiring
 - [ ] 08-03-PLAN.md — Run selector, sparklines, and visual verification checkpoint
