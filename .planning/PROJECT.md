@@ -45,10 +45,13 @@ Every feature in TEST_SPEC.md is tested automatically and reports clear pass/fai
 - Digital literacy persona agents (5 personas x 3 flows = 15 test functions) with friction scoring — Phase 7
 - Heatmap matrix HTML report comparing persona results side-by-side — Phase 7
 - FastAPI deployment endpoint for Railway + static report for Vercel — Phase 7
+- Next.js dashboard with interactive heatmap matrix and confusion drill-down slide-over — Phase 8
+- Historical run selector with delta badges and sparkline trend charts — Phase 8
+- Vercel-deployable static dashboard reading JSON artifacts from persona runs — Phase 8
 
 ### Active
 
-All v1 requirements, Phase 6 AI QA agents, and Phase 7 persona agents have been implemented.
+All phases complete including Phase 8 persona dashboard frontend. Human verification pending for Vercel deployment and visual responsive testing.
 
 ### Out of Scope
 
@@ -125,4 +128,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-30 after Phase 7 completion — digital literacy persona agents with deployment*
+*Last updated: 2026-03-31 after Phase 8 completion — persona dashboard frontend*
