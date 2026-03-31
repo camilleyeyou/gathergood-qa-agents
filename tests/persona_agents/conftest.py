@@ -1,7 +1,13 @@
 """Persona agent test fixtures — claude_client, agent_backend, skip-when-no-key,
 run_id, report generation hook, and per-test result recording."""
+import os
 import sys
 import uuid
+
+# Set PLAYWRIGHT_BROWSERS_PATH before importing playwright/pytest-playwright
+# so it finds browsers installed at /app/.browsers on Railway.
+if os.path.exists("/app/.browsers"):
+    os.environ["PLAYWRIGHT_BROWSERS_PATH"] = "/app/.browsers"
 
 import pytest
 import anthropic

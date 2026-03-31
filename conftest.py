@@ -1,4 +1,11 @@
 """Root conftest: markers, health check, teardown registry, session-scoped auth client."""
+import os
+
+# Set PLAYWRIGHT_BROWSERS_PATH before any playwright imports.
+# On Railway, browsers are installed to /app/.browsers.
+if os.path.exists("/app/.browsers"):
+    os.environ["PLAYWRIGHT_BROWSERS_PATH"] = "/app/.browsers"
+
 import base64
 import json
 import time
