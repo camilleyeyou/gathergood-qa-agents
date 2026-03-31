@@ -1,10 +1,30 @@
+# Environment
 .env
+venv/
+
+# Python
 __pycache__/
 *.pyc
 .pytest_cache/
-reports/*.html
-reports/*.xml
-playwright/.auth/
 *.egg-info/
 dist/
 build/
+
+# Node
+node_modules/
+.next/
+
+# Reports (generated, not source)
+reports/*.html
+reports/*.xml
+reports/screenshots/
+reports/traces/
+
+# Playwright
+playwright/.auth/
+
+# OS
+.DS_Store
+
+# IDE / tooling
+.claude/
