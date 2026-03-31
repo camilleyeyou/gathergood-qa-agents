@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to execute
-stopped_at: Completed 08-02-PLAN.md
-last_updated: "2026-03-31T14:24:03.707Z"
+status: Phase complete — ready for verification
+stopped_at: Completed 08-03-PLAN.md
+last_updated: "2026-03-31T14:29:53.376Z"
 progress:
   total_phases: 8
-  completed_phases: 6
+  completed_phases: 7
   total_plans: 26
-  completed_plans: 23
+  completed_plans: 24
 ---
 
 # Project State
@@ -69,6 +69,7 @@ Plan: 3 of 3
 | Phase 07 P03 | 15 | 2 tasks | 3 files |
 | Phase 08-persona-dashboard-frontend P01 | 8 | 2 tasks | 26 files |
 | Phase 08-persona-dashboard-frontend P02 | 3 | 2 tasks | 4 files |
+| Phase 08 P03 | 3 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -126,6 +127,8 @@ Recent decisions affecting current work:
 - [Phase 08-persona-dashboard-frontend]: Tailwind v4 friction color tokens added to @theme inline block in globals.css
 - [Phase 08-persona-dashboard-frontend]: Sheet onOpenChange uses base-ui Dialog Root signature (open, eventDetails) — compatible with arrow function ignoring second arg
 - [Phase 08-persona-dashboard-frontend]: HeatmapMatrix imports DetailPanel at compile time — DetailPanel created in same execution pass as HeatmapMatrix for build correctness
+- [Phase 08]: RunSelector computes aggregate delta by averaging raw friction delta — direct arithmetic cleaner than re-using computeDelta helper at aggregation level
+- [Phase 08]: base-ui Select onValueChange type is (string | null, ...) — null guard required before numeric conversion
 
 ### Pending Todos
 
@@ -145,6 +148,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-31T14:24:03.701Z
-Stopped at: Completed 08-02-PLAN.md
+Last session: 2026-03-31T14:29:53.371Z
+Stopped at: Completed 08-03-PLAN.md
 Resume file: None
